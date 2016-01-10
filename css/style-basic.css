@@ -1,0 +1,40 @@
+
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+#content {
+	padding-top:150px;
+	padding-bottom:400px;   /* Height of the footer element */
+}
+#footer {
+	width:100%;
+	height:150px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	padding:100px;
+	background:#eeeeee;
+}
+.push{
+    padding-bottom:85px;
+}
+.mini-push{
+    padding-bottom:40px;
+}
+.page-header{
+    margin-top: 0;
+}
+.panel-body{
+    padding-top:0;
+    
+}
+.featuredImg{
+    margin-bottom:15px;
+}

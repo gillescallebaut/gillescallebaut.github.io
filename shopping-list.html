@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="afbeeldingen/gilles.jpg">
+    <link rel='image_src' href='afbeeldingen/gilles.jpg' type='image/jpg'>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="fonts/code/stylesheet.css" rel="stylesheet">
+    <link href="css/style-home.css" rel="stylesheet">
+    <meta name="keywords" content="Gilles Callebaut, GUI, XML, Java, Android, Chocolate Code">
+    <meta name="author" content="Gilles Callebaut">
+    <meta name="description" content="Chocolate Code, gratis Java tutorials.">
+    <meta name="revisit-after" content="1 day">
+    <title>CC | Shopping List</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+
+    <style>
+
+     .hidden {
+         visibility: hidden;
+         opacity: 0;
+         transition: visibility 0s 2s, opacity 2s linear;
+     }
+
+     .visible {
+         visibility: visible;
+         opacity: 1;
+         transition: opacity 2s linear;
+     }
+
+     .effect {
+         -webkit-transition: all 3s ease-in-out 0.5s;
+         transition: all 3s ease-in-out 0.5s;
+     }
+
+     .head-navbar {
+         position: fixed;
+         top: 0px;
+     }
+
+     #img-header img {
+        width: 100%;
+        z-index: -100;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+    .pull-up{
+       margin-top:-20px;
+   }
+   .col img{
+    width:100%;
+   }
+
+</style>
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+</head>
+<body>
+    <div id="wrapper">
+        <script language="JavaScript" type="text/javascript" src="js/header.js"></script>
+
+
+
+        <div id="content">
+
+            <div class="jumbotron">
+                <div class="container">
+                    <h2 class="text-center">MOMENTEEL IN VOLLE ONTWIKKELING</h2>
+                    <p>Het is dus de bedoeling dat hij de gegevens uit een databank haalt. En daarna de gepast gegevens toevoegd aan het boodschappenlijstje.</p>
+                </div>
+            </div>
+
+            <div class="container">
+            <video controls>
+                <source src="2015-02-19-21-01-11_screenRecording.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+
+                <div class="push"></div>
+                <div class="page-header">
+                    <h2>Screenshots</h2>
+                </div>
+                <div class="row">
+                <div class="col-md-3 col">
+                        <img src="afbeeldingen/Shopping-list/2014-09-02 10.08.11.png"/>
+                    </div>
+                    <div class="col-md-3 col">
+                     <img src="afbeeldingen/Shopping-list/2014-09-02 10.08.17.png"/>
+                 </div>
+                 <div class="col-md-3 col">
+                    <img src="afbeeldingen/Shopping-list/2014-09-02 10.08.31.png"/>
+                </div>
+                <div class="col-md-3 col">
+                    <img src="afbeeldingen/Shopping-list/2014-09-02 10.08.40.png"/>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="push"></div>
+    <a href="#" class="back-to-top hidden-sm hidden-xs"><span class="glyphicon glyphicon-chevron-up pull-right top"></span></a>
+
+
+    <script src="js/footer.js"></script>
+
+
+
+
+</div>
+
+
+
+
+
+<script src="js/bootstrap.js"></script>
+<script>
+    $(window).load(function() {
+        var offset = 120;
+        var duration = 500;
+        var scrollBottom = $(window).scrollTop() + $(window).height();
+        if ($(window).width() > 768) {
+            $('.navbar').removeClass('navbar-fixed-top');
+        }
+        var menu = $('.navbar');
+        var origOffsetY = menu.offset().top;
+
+        jQuery(window).scroll(function () {
+
+            /* button up*/
+            if (jQuery(this).scrollTop() <= origOffsetY || ($(window).scrollTop() + $(window).height() > $(document).height() - 225)) {
+                jQuery('.back-to-top').fadeOut(duration);
+            } else {
+                jQuery('.back-to-top').fadeIn(duration);
+            }
+
+            /* navbar */
+            if ($(window).scrollTop() >= origOffsetY) {
+                $('.navbar').addClass('navbar-fixed-top');
+            } else {
+                $('.navbar').removeClass('navbar-fixed-top');
+            }
+            if (jQuery(this).scrollTop() = origOffsetY) {
+                jQuery('.back-to-top').fadeOut(duration);
+            }
+        });
+
+        jQuery('.back-to-top').click(function (event) {
+            event.preventDefault();
+            jQuery('html, body').animate({ scrollTop: origOffsetY }, duration);
+            jQuery('.back-to-top').fadeOut(duration);
+            return false;
+        })
+        jQuery('.top').click(function (event) {
+            event.preventDefault();
+            jQuery('html, body').animate({ scrollTop: origOffsetY }, duration);
+            jQuery('.back-to-top').fadeOut(duration);
+            return false;
+        })
+
+
+    });
+</script>
+
+</body>
+</html>

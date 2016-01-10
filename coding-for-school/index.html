@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="shortcut icon" href="../favicon.ico">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="../css/bootstrap.css" rel="stylesheet">
+	<link href="../fonts/code/stylesheet.css" rel="stylesheet">
+	<link href="../css/style-home.css" rel="stylesheet">
+	<!-- Facebook -->
+	<meta property="og:description" content="Verscheidene programma's gebruikt in lessen, labo's,..." />
+	<meta property="og:image" content="http://users.telenet.be/GillesCallebaut/afbeeldingen/banner-code.jpg">
+
+	<meta name="keywords" content="Gilles Callebaut, GUI, XML, Java, Android, Chocolate Code, C++">
+	<meta name="author" content="Gilles Callebaut">
+	<meta name="description" content="Coding for School">
+	<meta name="revisit-after" content="1 day">
+	<title>Coding for School</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+
+	<style>
+		.hidden {
+			visibility: hidden;
+			opacity: 0;
+			transition: visibility 0s 2s, opacity 2s linear;
+		}
+
+		.visible {
+			visibility: visible;
+			opacity: 1;
+			transition: opacity 2s linear;
+		}
+
+		.effect {
+			-webkit-transition: all 3s ease-in-out 0.5s;
+			transition: all 3s ease-in-out 0.5s;
+		}
+
+		.head-navbar {
+			position: fixed;
+			top: 0px;
+		}
+
+
+		#img-header {
+			position: relative;
+			left: 0;
+			top: 0;
+		}
+
+		#img-header img {
+			width: 100%;
+			z-index: -100;
+		}
+
+		#img-header a {
+			position: absolute;
+			bottom: 15%;
+			width: 100%;
+			z-index: 1;
+			text-align: center;
+			font-size: 30px;
+		}
+
+		hr {
+			background-image: -webkit-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
+			background-image: -o-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
+			background-image: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
+			filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+			background-repeat: repeat-x;
+			border-color: #dbdbdb;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		.jumbotron{
+			margin-bottom:100px;
+		}
+	</style>
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+</head>
+<body>
+	<div id="wrapper">
+		<div class="hidden-sm hidden-xs" id="img-header">
+			<img src="../afbeeldingen/banner-code.jpg" />
+			<a href="#"><span class="glyphicon glyphicon-chevron-down top"></span></a>
+		</div>
+		<script language="JavaScript" type="text/javascript" src="js/header.js"></script>
+
+
+
+		<div id="content">
+
+
+			<div class="jumbotron">
+				<div class="container">
+					<h1 class="text-center hidden-sm hidden-xs" data-toggle="collapse" data-target="#collapseProgrammeertechnieken" style="cursor:pointer">Programmeertechnieken</h1>
+					<h1 class="text-center visible-sm visible-xs" data-toggle="collapse" data-target="#collapseProgrammeertechnieken" style="cursor:pointer">Programmeer-<br />technieken</h1>
+					<div id="collapseProgrammeertechnieken" class="collapse">
+						<div class="mini-push"></div>
+						<div class="row">
+							<div class="col-md-6">
+								<h2>Labo</h2>
+							</div>
+							<div class="col-md-3 col-sm-3">
+								<div class="mini-push"></div>
+								<a type="button" disabled="disabled" class="btn btn-primary btn-lg btn-block">Opdracht 1</a>
+								<a type="button" disabled="disabled" class="btn btn-primary btn-lg btn-block">Opdracht 2</a>
+								<a type="button" disabled="disabled" class="btn btn-primary btn-lg btn-block">Opdracht 3</a>
+								<a type="button" disabled="disabled" class="btn btn-primary btn-lg btn-block">Opdracht 4</a>
+								<a type="button" disabled="disabled" class="btn btn-primary btn-lg btn-block">Opdracht 5</a>
+								<a type="button" disabled="disabled" class="btn btn-primary btn-lg btn-block">Opdracht 6</a>
+							</div>
+
+							<div class="col-md-3 col-sm-3">
+								<div class="mini-push"></div>
+								<a href="cfs-pt-labo-1.html" class="btn btn-default btn-lg btn-block">Labo 1</a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 2</a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 3</a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 4</a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 5</a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 6</a>
+							</div>
+						</div><!-- ./row -->
+
+						<hr class="divider" />
+
+						<div class="row">
+							<div class="col-md-6">
+								<h2>Programma's uit de les</h2>
+							</div>
+							<div class="col-md-3">
+								<h3 class="text-center">Java</h3>
+
+								<a type="button" disabled="disabled" class="btn btn-primary btn-lg btn-block">Opdracht 1</a>
+								<a type="button" disabled="disabled" class="btn btn-primary btn-lg btn-block">Opdracht 2</a>
+								<a type="button" disabled="disabled" class="btn btn-primary btn-lg btn-block">Opdracht 3</a>
+								<a type="button" disabled="disabled" class="btn btn-primary btn-lg btn-block">Opdracht 4</a>
+								<a type="button" disabled="disabled" class="btn btn-primary btn-lg btn-block">Opdracht 5</a>
+								<a type="button" disabled="disabled" class="btn btn-primary btn-lg btn-block">Opdracht 6</a>
+							</div>
+							<div class="col-md-3">
+								<h3 class="text-center">C++</h3>
+								<a href="cfs-pt-operator-overloading-cpp.html" type="button" class="btn btn-default btn-lg btn-block">Operator Overloading</a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 2</a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 3</a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 4</a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 5</a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 6</a>
+							</div>
+						</div><!-- ./row -->
+
+						<hr class="divider" />
+
+						<div class="row">
+							<div class="col-md-6">
+								<h2>Vragen en opgaven</h2>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Hoofdstuk 2</a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Hoofdstuk 3</a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Hoofdstuk 4</a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Hoofdstuk 5</a>
+							</div>
+						</div><!-- /.row -->
+					</div><!-- /.collapse -->
+				</div><!-- /.container -->
+			</div><!-- /.jumbotron -->
+
+
+			<div class="jumbotron">
+				<div class="container">
+					<h1 class="text-center hidden-sm hidden-xs" data-toggle="collapse" data-target="#collapseBesturingssytemen1" style="cursor:pointer">Besturingssystemen 1</h1>
+					<h1 class="text-center visible-sm visible-xs" data-toggle="collapse" data-target="#collapseBesturingssytemen1" style="cursor:pointer">Besturings-<br />systemen 1</h1>
+					<div id="collapseBesturingssytemen1" class="collapse">
+						<div class="mini-push"></div>
+						<div class="row">
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<h2>Labo</h2>
+							</div>
+							<div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
+								<div class="mini-push"></div>
+								<a type="button" class="btn btn-default btn-lg btn-block">Labo 1<br><small>Synchronisatie in pseudocode</small></a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 2<br><small>Synchronisatie in Java</small></a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 3<br><small>Eenvoudige synchronisatie problemen<br>in Java</small></a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 4<br><small>Complexe synchronisatie problemen<br> in Java</small></a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 5<br><small>Complexe synchronisatie problemen<br> in POSIX (C)</small></a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 6<br><small>Oefeningen op Deadlock</small></a>
+							</div>
+						</div><!-- ./row -->
+
+						<!--<hr class="divider" />-->
+
+					</div><!-- /.collapse -->
+				</div><!-- /.container -->
+			</div><!-- /.jumbotron -->
+
+			<div class="jumbotron">
+				<div class="container">
+					<h1 class="text-center hidden-sm hidden-xs" data-toggle="collapse" data-target="#collapseComputertechniek" style="cursor:pointer">Computertechniek</h1>
+					<h1 class="text-center visible-sm visible-xs" data-toggle="collapse" data-target="#collapseComputertechniek" style="cursor:pointer">Computer-<br />techniek</h1>
+					<div id="collapseComputertechniek" class="collapse">
+						<div class="mini-push"></div>
+						<div class="row">
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<h2>Labo</h2>
+							</div>
+							<div class="col-lg-5 col-md-6 col-sm-6  col-xs-12">
+								<div class="mini-push"></div>
+								<a href="cfs-ct-labo1.html" type="button" class="btn btn-default btn-lg btn-block">Labo 1<br><small>Studie machinetaal en DOS</small></a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 2<br><small>Studie debugging</small></a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 3<br><small>Standaard routines</small></a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 4<br><small>Batch files</small></a>
+								<a type="button" disabled="disabled" class="btn btn-default btn-lg btn-block">Labo 5<br><small>Schrijven van een DOS programma</small></a>
+							</div>
+						</div><!-- ./row -->
+
+						<!--<hr class="divider" />-->
+
+						</div><!-- /.row -->
+					</div><!-- /.collapse -->
+				</div><!-- /.container -->
+			</div><!-- /.jumbotron -->
+
+
+
+
+			<a href="#" class="back-to-top hidden-sm hidden-xs"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
+
+			<div id="footer">
+				<div class="row">
+					<div class="col-md-2 col-lg-3 col-sm-8 col-xs-10">
+						<p>Copyright &copy; <strong>Gilles Callebaut</strong></p>
+
+					</div>
+					<div class="visible-sm visible-xs col-sm-2 col-xs-1"></div>
+					<div class="col-md-8 col-lg-7 text-center pull-up hidden-sm hidden-xs col-sm-6 col-xs-3">
+						<a class="footer-icon" href="https://www.facebook.com/Gilles.Callebaut" target="_blank"><img style="width:50px; vertical-align:middle" src="../afbeeldingen/icons/footer/facebook.png" onmouseover="this.src = '../afbeeldingen/icons/footer/facebook-trans.png';" onmouseout="    this.src = '../afbeeldingen/icons/footer/facebook.png';" /></a>
+						<a class="footer-icon" href="https://plus.google.com/+GillesCallebaut" target="_blank"><img width="50px" src="../afbeeldingen/icons/footer/g+.png" onmouseover="this.src = '../afbeeldingen/icons/footer/g+-trans.png';" onmouseout="    this.src = '../afbeeldingen/icons/footer/g+.png';" /></a>
+						<a class="footer-icon" href="https://www.tumblr.com/blog/projectarduino-gc" target="_blank"><img width="50px" src="../afbeeldingen/icons/footer/tumblr.png" onmouseover="this.src = ../'afbeeldingen/icons/footer/tumblr-trans.png';" onmouseout="    this.src = '../afbeeldingen/icons/footer/tumblr.png';" /></a>
+						<a class="footer-icon" href=" mailto:callebaut.gilles@gmail.com?subject=verzonden%20via%20site" target="_top"><img width=" 50px" src="../afbeeldingen/icons/footer/mail.png" onmouseover="this.src = '../afbeeldingen/icons/footer/mail-trans.png';" onmouseout="this.src = '../afbeeldingen/icons/footer/mail.png';" /></a>
+						<a class="footer-icon" href="java-tut.html" target="_top"><img width=" 50px" src="../afbeeldingen/icons/footer/java.png" onmouseover="this.src = '../afbeeldingen/icons/footer/java-trans.png';" onmouseout="this.src = '../afbeeldingen/icons/footer/java.png';" /></a>
+					</div>
+					<div class="col-md-1 col-xs-1 pull-right">
+						<p><a href="#"><span class="glyphicon glyphicon-chevron-up pull-right top"></span></a></p>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+
+
+
+
+
+	<script src="../js/bootstrap.js"></script>
+
+
+<script>
+		$(window).load(function() {
+			var offset = 120;
+			var duration = 500;
+			var scrollBottom = $(window).scrollTop() + $(window).height();
+
+			if ($(window).width() > 768) {
+				$('.navbar').removeClass('navbar-fixed-top');
+			}
+			var origOffsetY = $('.navbar').offset().top;
+
+			jQuery(window).scroll(function () {
+				/* button up*/
+
+				if (jQuery(this).scrollTop() <= origOffsetY || ($(window).scrollTop() + $(window).height() > $(document).height() - 225)) {
+					jQuery('.back-to-top').fadeOut(duration);
+				} else {
+					jQuery('.back-to-top').fadeIn(duration);
+				}
+
+				/* navbar */
+				if(origOffsetY!=0){
+					if ($(window).scrollTop() >= origOffsetY) {
+						$('#img-header').addClass('hidden');
+						$('.navbar').addClass('navbar-fixed-top'); 
+						origOffsetY=0;
+						jQuery('html, body').scrollTop(0);               
+					}
+
+					if (jQuery(this).scrollTop() = origOffsetY) {
+						jQuery('.back-to-top').fadeOut(duration);
+					}
+				}
+			});
+
+			jQuery('.back-to-top').click(function (event) {
+				event.preventDefault();
+				jQuery('html, body').animate({ scrollTop: 0 }, duration);
+				jQuery('.back-to-top').fadeOut(duration);
+				return false;
+			})
+			jQuery('.top').click(function (event) {
+				event.preventDefault();
+				jQuery('html, body').animate({ scrollTop: origOffsetY }, duration);
+				jQuery('.back-to-top').fadeOut(duration);
+				return false;
+			})
+
+
+		});
+</script>
+
+</body>
+</html>

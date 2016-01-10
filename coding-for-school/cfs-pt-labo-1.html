@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="shortcut icon" href="../favicon.ico">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../fonts/code/stylesheet.css" rel="stylesheet">
+    <link href="../css/style-basic.css" rel="stylesheet">
+    <link href="../css/style-navigation.css" rel="stylesheet">
+    <link href="../css/style-back-to-top.css" rel="stylesheet">
+    <link href="../css/style-footer.css" rel="stylesheet">
+    <meta name="keywords" content="Gilles Callebaut, GUI, XML, Java, Android, Chocolate Code, C++, C#">
+    <meta name="author" content="Gilles Callebaut">
+    <meta name="description" content="Coding for School">
+    <link href="../css/monokai_sublime.css" rel="stylesheet">
+    <meta name="revisit-after" content="1 day">
+    <title>Labo 1 - Programmeertechnieken</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+
+    <style>
+        .hidden {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s 2s, opacity 2s linear;
+        }
+
+        .visible {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 2s linear;
+        }
+
+        .effect {
+            -webkit-transition: all 3s ease-in-out 0.5s;
+            transition: all 3s ease-in-out 0.5s;
+        }
+
+        .head-navbar {
+            position: fixed;
+            top: 0px;
+        }
+
+        #img-header {
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        #img-header img {
+            width: 100%;
+            z-index: -100;
+        }
+
+        #img-header a {
+            position: absolute;
+            bottom: 100px;
+            width: 100%;
+            z-index: 1;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        hr {
+            background-image: -webkit-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
+            background-image: -o-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
+            background-image: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
+            filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+            background-repeat: repeat-x;
+            border-color: #dbdbdb;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="wrapper">
+        <script language="JavaScript" type="text/javascript" src="js/header.js"></script>
+
+
+        <div id="content">
+
+
+            <div class="container">
+                <h1 class="text-center hidden-sm hidden-xs">Labo 1 - Programmeertechnieken</h1>
+                <div class="mini-push"></div>
+                <div class="jumbotron">
+                    <h2>Queue (C++)</h2>
+                    <p>
+                        Schrijf een klasse waarin je een Queue (wachtlijn, fo) voor getallen implementeert.
+                        Intern maak je gebruik van een dynamisch array. Voorzie de klasse van:
+                        <ul>
+                            <li>een constructor</li>
+
+                            <li>
+                                een functie om een element toe te voegen aan de queue (na de vorig toegevoegden)
+                            </li>
+
+                            <li>
+                                een functie om een element te verwijderen uit de queue (reeds langst in)
+                            </li>
+
+                            <li>
+                                een destructor
+                            </li>
+
+                            <li>een copyconstructor</li>
+                        </ul>
+                        Zou het interessanter zijn om een gelinkte lijst te gebruiken ipv een array?
+                    </p>
+                    <pre><code class="cpp">#include &lt;stdio.h&gt;
+                        int main(){
+                        printf("Dit is maar een voorbeeld!");
+                        return 0;
+                    }</code></pre>
+                </div>
+            </div><!-- einde container -->
+
+            <div class="container">
+                <div class="push"></div>
+                <div id="disqus_thread"></div>
+                <script language="JavaScript" type="text/javascript" src="../js/disqus-one.js"></script>
+
+
+
+                <div class="push"></div>
+                <a href="#" class="back-to-top hidden-sm hidden-xs"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
+
+                <div id="footer">
+                    <div class="row">
+                        <div class="col-md-2 col-lg-3 col-sm-8 col-xs-10">
+                            <p>Copyright &copy; <strong>Gilles Callebaut</strong></p>
+
+                        </div>
+                        <div class="visible-sm visible-xs col-sm-2 col-xs-1"></div>
+                        <div class="col-md-8 col-lg-7 text-center pull-up hidden-sm hidden-xs col-sm-6 col-xs-3">
+                            <a class="footer-icon" href="https://www.facebook.com/Gilles.Callebaut" target="_blank"><img style="width:50px; vertical-align:middle" src="../afbeeldingen/icons/footer/facebook.png" onmouseover="this.src = '../afbeeldingen/icons/footer/facebook-trans.png';" onmouseout="    this.src = '../afbeeldingen/icons/footer/facebook.png';" /></a>
+                            <a class="footer-icon" href="https://plus.google.com/+GillesCallebaut" target="_blank"><img width="50px" src="../afbeeldingen/icons/footer/g+.png" onmouseover="this.src = '../afbeeldingen/icons/footer/g+-trans.png';" onmouseout="    this.src = '../afbeeldingen/icons/footer/g+.png';" /></a>
+                            <a class="footer-icon" href="https://www.tumblr.com/blog/projectarduino-gc" target="_blank"><img width="50px" src="../afbeeldingen/icons/footer/tumblr.png" onmouseover="this.src = ../'afbeeldingen/icons/footer/tumblr-trans.png';" onmouseout="    this.src = '../afbeeldingen/icons/footer/tumblr.png';" /></a>
+                            <a class="footer-icon" href=" mailto:callebaut.gilles@gmail.com?subject=verzonden%20via%20site" target="_top"><img width=" 50px" src="../afbeeldingen/icons/footer/mail.png" onmouseover="this.src = '../afbeeldingen/icons/footer/mail-trans.png';" onmouseout="this.src = '../afbeeldingen/icons/footer/mail.png';" /></a>
+                            <a class="footer-icon" href="java-tut.html" target="_top"><img width=" 50px" src="../afbeeldingen/icons/footer/java.png" onmouseover="this.src = '../afbeeldingen/icons/footer/java-trans.png';" onmouseout="this.src = '../afbeeldingen/icons/footer/java.png';" /></a>
+                        </div>
+                        <div class="col-md-1 col-xs-1 pull-right">
+                            <p><a href="#"><span class="glyphicon glyphicon-chevron-up pull-right top"></span></a></p>
+                        </div>
+                    </div>
+                </div><!-- einde footer -->
+            </div><!-- einde container -->
+        </div><!-- einde content -->
+    </div><!-- einde wrapper -->
+
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/back-to-top.js"></script>
+</body>
+</html>

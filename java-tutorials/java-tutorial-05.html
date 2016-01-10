@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/monokai_sublime.css" rel="stylesheet">
+    <link href="../css/style-footer-java-tut.css" rel="stylesheet">
+    <link href="../css/style-home.css" rel="stylesheet">
+
+    <title>Java Tutorial 5</title>
+   
+</head>
+<body>
+<div id="wrapper">
+    <script language="JavaScript" type="text/javascript" src="js/header-java.js"></script>
+
+<div id="content">
+<div class="container">
+    <div class="row">
+            <div class="col-md-10 col-sm-12 col-xs-12">
+
+                <div class="panel panel-default">
+
+                    <div class="panel-body">
+
+                        <div class="page-header">
+                            <h2>Java Tutorial 5 - if/else statement &amp; lussen  <small>Gepost op 16 aug. 2014</small></h2>
+                        </div>
+
+                        <div class="well">
+                            <p>
+                                Programmeurs zijn in weze zeer luie mensen, als een computer het werk voor ons kan doen dan laten we hem werken i.p.v. onszelf moe te maken.
+                                Daarom gebruiken we -onder andere- lussen. Lussen gebruiken we om code een aantal keer te laten doorlopen.
+                            </p>
+                            <p>
+                                if/else statements gebruiken we om bepaalde code te doorlopen enkel als onze conditie juist <code>true</code>of fout <code>false</code> is.
+                            </p>
+                        </div><!-- /.well -->
+
+
+                        <div id="1" class="anchor"></div>
+                        <h2>if/else statement</h2>
+                        <p>
+                            Het is vaak handig om enkel een stuk code uit te voeren wanneer een conditie waar is of als het juist fout is.
+                        </p>
+                        <p>
+                            Als voorbeeld, vragen we ons af hoe het weer momenteel is. Als het goed weer is dan is het misschien best om een korte broek aan te trekken,
+                            als het slecht weer is dan is het misschien beter om een paraplu mee te nemen.<br />
+                            Om dit naar code te 'vertalen' maken we dus gebruik van het if/else statement. In de comments wordt er weergegeven hoe het eruit ziet in zijn algemene vorm.
+                        </p>
+                        <pre><code class="java">             
+public class WatAanTeDoen {
+	public static void main(String[] args) {
+		String weer = "regen";
+		
+		/*
+		 * if(conditie){
+		 * 		//doe iets
+		 * } else {
+		 * 		//doe iets anders
+		 * }
+		 */
+		
+		if(weer=="regen"){
+			System.out.println("Het is slecht weer vandaag, doe maar een paraplu mee!");
+		} else {
+			System.out.println("Het ziet er goed weer uit vandaag, doe maar een korte broek aan.");
+		}
+	
+	}
+}
+</code></pre>
+                        <h4>Toelichting van de code</h4>
+                        <p>
+
+                            We maken via <code>String weer = "regen";</code> een string aan met de naam weer en de waarde "regen".
+                            Achter <code>if</code> -tussen de haakjes- kijken we of deze statment juist of fout is. Dit doen we door te 'vragen',
+                            <code>weer == "regen"</code> heeft de string <code>weer</code> een waarde gelijk aan "regen"? <br />
+                            We gebruiken hier 2 maal het gelijkheidsteken om te kijken of de waarde van <code>weer</code> gelijk is aan "regen", moesten we gebruik maken van een enkele '=' dan zouden we zeggen
+                            dat de string <code>weer</code> een waarde van "regen" zou krijgen.
+                        </p>
+                        <p>
+                            We kunnen het if/else statement verder uitbreiden, door deze meerdere keren te herhalen.
+                        </p>
+<pre><code class="java">public class WatAanTeDoen {
+	public static void main(String[] args) {
+		String weer = "zonnig";
+		
+		/*
+		 * if(conditie){
+		 * 		//doe iets
+		 * } else if(conditie2){
+		 * 		//doe iets anders
+		 * }else{
+		 * 			//als de condities hierboven allemaal niet voldoen zijn
+		 *			//doe dan maar nog iets anders
+		 * }
+		 */
+		
+		if(weer=="regen"){
+			System.out.println("Het is slecht weer vandaag, doe maar een paraplu mee!");
+		} else if(weer=="mistig") {
+			System.out.println("Het is momenteel mistig, blijf maar lekker binnen.");
+			} else if(weer=="zonnig"){
+			System.out.println("Het ziet er goed weer uit vandaag, doe maar een korte broek aan.");
+			} else{
+				System.out.println("Het is vandaag niet regenachtig, mistig of zonning, "
+						+ "dat is het enigste dat ik zeker weet."
+						+ "Dus kijk zelf maar eens buiten, eh!");
+			}
+	}
+}
+</code></pre>
+                        <h4>Toelichting van de code</h4>
+                        <p>
+                            De laatste else statement in de code wordt uitgevoerd als er geen van de bovenstaande condities kloppen. <br />
+                            De plusjes die je ziet bij de laatste string tussen <code>System.out.println()</code> is om de leesbaarheid van de code te verbeteren,
+                            zo wordt de code niet te breed. We zetten dus een plus om verschillende strings met elkaar te 'verbinden'.
+                        </p>
+                        <p>
+                            <strong>Opmerking</strong><br />
+                            Het is niet de bedoeling om die if/else statement teveel te herhalen zoals hierboven. Daarvoor bestaat er zoiets als een switch statement, die hieronder wordt besproken.
+                        </p>
+
+                        <hr class="divider" style="margin-top:40px;margin-bottom:40px;">
+                        <div id="lussen" class="anchor"></div>
+
+                        <h2>Lussen</h2>
+                        <p>
+                            Als we een code verschillende keren willen uitvoeren maken we gebruik van lussen.<br />
+                            De lussen die we gaan besproken: de for-lus, de while-lus en de do-while-lus. We gebruiken deze lussen door elkaar,
+                            <strong>maar</strong> de keuze van welke lus we gebruiken is <strong>niet</strong> willekeurig.
+                        </p>
+                        <p> Er bestaat ook nog zo iets als een for-each lus, maar deze zullen we bespreken als we het gaan hebben over lists.</p>
+
+                        <div id="2" class="anchor"></div>
+                        <h3>De for-lus</h3>
+                        <p>
+                            <strong>Gebruik</strong>:
+                            Als we weten hoeveel keer we de lus moeten doorlopen -bijvoorbeeld bij het opvullen van een array- maken we gebruik van een for-lus.
+                        </p>
+                        <pre><code class="java">public class ForLusVoorbeeld {
+	public static void main(String[] args) {
+		int rij[] = new int[10];
+		
+		//we willen nu de rij opvullen van 0 tot 9
+		//we weten dus dat we de lus 10 keer moeten doorlopen
+		
+		/*
+		 * for (initialisatie; terminatie; toename/afname) {
+		 * 		//statement
+		 * }
+		 */
+			     
+		for(int i=0;i<10;i++){
+                    rij[i]=i;
+                    system.out.println("de waarde van de rij "+rij[i]);
+                }
+        }
+}</code></pre>
+                        <h4>Toelichting van de code</h4>
+                        <p>
+                            We maken eerst een rij array aan van 10 ints. <br />
+                            De for-lus werkt zoals volgt,<br />
+                            <dl class="dl-horizontal">
+                                <dt>initialisatie <code>int i=0;</code></dt>
+                                <dd>Dit wordt eenmaal uitgevoerd wanneer de lus wordt uitgevoerd</dd>
+                                <dt>terminatie <code>i<10;</code></dt>
+                                <dd>Als de conditie false is dan wordt de lus gestopt.</dd>
+                                <dt>toename/afname <code>i++;</code></dt>
+                                <dd>De waarde van i wordt met 1 vermeerderd, elke keer dat de lus wordt doorlopen. Als we gebruik maken van <code>i--;</code> dan wordt i met 1 verminderd.</dd>
+                            </dl>
+                            Dus de lus wordt 10 keer doorlopen. Beginnend met <mark>i=0</mark> en stopt bij <mark>i=10</mark>, waarbij de lus dus <strong>niet</strong> meer doorlopen wordt.
+                        </p>
+
+
+
+
+                        <div id="3" class="anchor"></div>
+
+                        <h3>De while-lus</h3>
+                        <p>
+                            <strong>Gebruik</strong>:
+                            Als we niet weten hoeveel keer we de lus moeten doorlopen én wanneer we niet weten of de lus wel moet doorlopen worden, dan maken we gebruik van een while-lus.
+                        </p>
+                        <p>
+                            Een while lus kijkt of een conditie waar is -true- en dan doorloopt hij de code die zich bevindt in de while-lus.<br />
+                            Voor we beginnen met een voorbeeld van een while lus gaan we users inputs verwerken.
+                            We maken een simpele input scanner aan via <code>Scanner input = new Scanner(System.in);</code>. Hiervoor moet je wel de <code>Java.util.Scanner</code> bibliotheek importeren -zie mijn programam hieronder-.
+                            De users input -via het keyboard- worden gelezen door de volgende code, <code>input.nextInt();</code>. Zoals je kan zien aan de code gaan we int's inlezen.
+                            We kunnen ook strings inlezen via <code>String zin = input.nextLine();</code>.
+                        </p>
+                        <pre><code class="java">import java.util.Scanner; //importeren van de scanner
+public class WhileVoorbeeld {
+	public static void main(String[] args) {
+		int n; //declaratie n
+		 
+	    Scanner input = new Scanner(System.in); //scanner
+	    
+	    System.out.println("Geef een getal in met uitzondering van 0");
+	    n = input.nextInt(); //lees het getal in
+	 
+	    /* zolang de user een getal ingeeft verschillend van 0
+	     * wordt de lus doorlopen
+	     */
+	    while (n != 0) {
+	      System.out.println("Uw getal: " + n);
+	      System.out.println("Geef een getal in en stop door 0 in te typen");
+	      n = input.nextInt(); //lees het getal in
+	   }
+	    input.close(); //het sluiten van de scanner is niet noodzakelijk
+	  }
+}
+</code></pre>
+
+                        <div id="4" class="anchor"></div>
+                        <h3>De do-while lus</h3>
+                        <p>
+                            <strong>Gebruik: </strong> Als we te maken hebben met een lus dat zeker éénmaal <strong>moet</strong> worden doorlopen én het aantal keer dat de lus moet doorlopen worden is niet gekend,
+                            dan maken we gebruik van een do-while lus.
+                        </p>
+                        <p>
+                            We nemen hetzelfde voorbeeld als hierboven maar dan met een do-while lus. Dan bekomen we dit:
+                        </p>
+                        <pre><code class="java">import java.util.Scanner; //importeren van de scanner
+public class DoWhileVoorbeeld {
+	public static void main(String[] args) {
+		int n; //declaratie n
+		 
+	    Scanner input = new Scanner(System.in); //scanner
+	    
+	    System.out.println("Geef een getal in met uitzondering van 0");
+	    n = input.nextInt(); //lees het getal in
+	 
+	    /* zolang de user een getal ingeeft verschillend van 0
+	     * wordt de lus doorlopen
+	     */
+	    do{
+	    	System.out.println("Uw getal: " + n);
+		      System.out.println("Geef een getal in en stop door 0 in te typen");
+		      n = input.nextInt(); //lees het getal in
+	    }
+	    while (n != 0);
+	    input.close(); //het sluiten van de scanner is niet noodzakelijk
+	  }
+}
+</code></pre>
+                        <p>
+                            Als we nu dit programma laten uitvoeren en we voeren '0' in dan stopt de code niet, in tegenstelling tot het voorbeeld met de while-lus.
+                            De code in de do-while lus wordt dus eerst doorlopen om dan pas nadien te kijken of er aan de conditie voldaan is.
+                        </p>
+
+                        <p>In de volgende tutorial gaan we een 'oplossing' zoeken voor het if/else probleem zodat we deze niet teveel beginnen nesten in elkaar. En gaan we verder werken met user-inputs.</p>
+
+
+                        <div id="switch" class="anchor"></div>
+                        <h2>Switch statement</h2>
+                        <p>
+                            <strong>Gebruik: </strong> In plaats van lange if... else if statements te gebruiken, kiezen we voor een switch-statement. De switch kijkt naar je variabele en vergelijkt deze met een <em>range</em> van <em>cases</em>.<br>
+                            Als de geteste variabele overeenkomt met een <em>case</em> dan voert hij de code uit die behoort bij die case.
+                        </p>
+                        <pre><code class="java">import java.util.Scanner; //importeren van de scanner
+public class SwitchVoorbeeld {
+    public static void main(String[] args) {
+        int n; //declaratie n
+         
+        Scanner input = new Scanner(System.in); //scanner
+        
+        System.out.println("Geef een getal tussen 0 en 4");
+        n = input.nextInt(); //lees het getal in
+     
+
+        switch(n){ //n is het ingegeven getal
+            case 1: System.out.println("U heeft 1 ingedrukt, proficiat"); break; 
+            case 2: System.out.println("U heeft de vierkantswortel van 4 ingedrukt"); break; 
+            case 3: System.out.println("U heeft 2 tot de 2de macht min één ingedrukt"); break; 
+            default: System.out.println("U heeft niet goed geluisterd, een getal TUSSEN 0 en 4, moest je invullen!");
+        }
+        input.close(); //het sluiten van de scanner is niet noodzakelijk
+      }
+}
+</code></pre>
+
+<h4>Toelichting van de code</h4>
+<p>Algemeen:</p>
+<p><code>switch(variabele)</code> waarbij we een variabele gaan 'controleren'.<br>
+<code>case waarde:</code>, als de variabele een waarde heeft gelijk aan deze van onze case dan wordt de code uitgevoerd die achter de ':' staat.<br>
+Om te weten wat de <code>break;</code> daar doet, moet je eens het getal 1 ingeven en de breaks overal weghalen. Je zult zien dat dan alle code gaat uitgevoerd worden, in plaats van enkel de code die behoort bij <code>case 1:</code>. <code>break;</code> wordt dus gebruikt om los te komen uit de case.<br>
+Een goeie gewoonte is ook altijd een default case aan te maken zodat als de variabele geen <em>match</em> heeft dat dan de code na de default wordt uitgevoerd.</p>
+<p><strong>Opmerking</strong><br> Als er meerder gevallen -cases- zijn die éénzelfde code moet uitvoeren kan je gewoon deze cases achter elkaar schrijven. Bijvoorbeeld om te kijken of de gebruiker te jong is om bier te drinken.<br>
+<code>case 1: ... case 14: case 15: System.out.println("Nog even wachten voor je eerste pint!");break;</code> die '...' is geen code maar is om de code niet nodeloos lang te maken voor jullie. Hopelijk begrijpen jullie dat we telkens case X moeten invullen achter elkaar, met X die gaat van 1 t.e.m. 15.<p>
+
+
+                    </div><!-- /.panel-default -->
+                </div><!-- /.panel -->
+
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <strong>Opmerkingen of vragen?</strong> Stel ze hieronder.
+                </div><!-- /.alert -->
+
+                <ul class="pager">
+                    <li class="previous"><a href="java-tutorial-04.html">&larr; Vorige</a></li>
+                    <li class="next disabled"><a href="#">Volgende &rarr;</a></li>
+                </ul>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'chocolatecode'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+
+
+            </div><!-- /.col -->
+        
+            <div class="col-md-2 hidden-sm hidden-xs fixed-top-right" >
+                <div class="nav-header"><a href="#1"><strong>if/else statement</strong></a></div>
+                <div class="nav-header"><a href="#lussen"><strong>Lussen</strong></a></div>
+                <ul class="nav nav-list bs-docs-sidenav">
+                    <li>
+                        <a href="#2">
+                            for lus
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#3">
+                            while lus
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#4">
+                            do-while lus
+                        </a>
+                    </li>
+                </ul>
+                <div class="nav-header"><a href="#switch"><strong>Switch</strong></a></div>
+            </div><!-- /.col -->
+
+        </div><!-- /.row -->
+        </div><!-- /.container -->
+
+    </div><!-- /.content -->
+
+        <script language="JavaScript" type="text/javascript" src="../js/footer-java-tut.js"></script>
+
+    </div><!-- /.wrapper -->
+
+
+
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'chocolatecode'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/bootstrap.js"></script>
+
+</body>
+</html><!--stephanie-->

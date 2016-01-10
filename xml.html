@@ -1,0 +1,887 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style-home.css" rel="stylesheet">
+    <link href="css/prism.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <title>XML</title>
+</head>
+<body>
+    <div id="wrapper">
+        <script language="JavaScript" type="text/javascript" src="js/header.js"></script>
+
+        <div id="content"class="container">
+
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+
+                    <div class="page-header">
+                        <h2>XML opdracht - PDF cre&#235;ren <small>Gepost op 23 juli</small></h2>
+                    </div>
+
+                    <div class="well">
+                        <p>Soms is het handig om XML te gebruiken voor het cre&#235;ren van een PDF.</p>
+                        <p>
+                            Wanneer je herhaardelijk dezelfde soort data mooi en gestructureerd wilt tonen, is de combinatie van XML en XSL de keuze bij uitstek!
+                            Via de gegevens uit uw XML-file en de opmaak uit XSL-file kunt u gemakkelijk een pdf generenen via de handige tool, <a href="http://xmlgraphics.apache.org/fop/">fop</a>.
+                        </p>
+                        <p>PS: Je kunt veel meer met XML doen dan wat ik hier met u ga overlopen, dit is specifiek om rauwe data om te zetten in een aangename PDF.</p>
+                    </div>
+                    <h2>Het maken van de XML-file</h2>
+                    <p>In dit voorbeeld gaan we aan de slag met data over (high-end) Android smartphones.</p>
+                    <p>
+                        Zoals u kan zien -in de code hieronder- bestaat de XML-file uit <code>&lt;tags&gt;</code> met daarin attributen (meta-data) en daarnaast de data.
+                        Hetgeen we schrijven tussen de <code>&lt;tags&gt;</code> is van geen enkel belang, het is pas bij de interpretatie in de XSL-file dat dit ter sprake komt.
+                        het is wel aan u om de tags een logische benaming te geven.
+                    </p>
+                    <h3>De opbouw van een XML-file</h3>
+                    <p>
+                        <pre><code class="language-markup">&lt;ouder&gt;<br />
+  &lt;kind attribuut="waarde"&gt; &lt;/kind&gt;<br />
+&lt;/ouder&gt;</code></pre>
+                    </p>
+                    <p>U kunt het ouder-kind principe blijven uitbreiden, zolang u maar op de juiste plaats de end-tag plaatst.</p>
+                    <p>
+                        Wanneer u nu uw element hebt gemaakt, voegt u de meta-data toe onder de vorm van attributen. Meta-data is simpel uitgelegd, data over data.
+                        <br />Tussen uw elementen voegt u de data toe die behoort bij dat attribuut.
+                    </p>
+                    <p>
+                        Een simpel voorbeeldje:
+                        <pre><code class="language-markup">&lt;androidVersies&gt;<br />
+  &lt;android versie="5.0"&gt; Android L &lt;/android&gt;<br />
+&lt;/ouder&gt;</code></pre>
+                        Hier ziet u dus dat er data bestaat over de android-versie, namelijk de nummer van de respectievelijke android-versie. De naam van de android-versie wordt dan tussen het element <code>&lt;android&gt;</code> gezet.
+                    </p>
+                    <p>Na het maken van een XML-file die aan uw behoeften voldoet, zult u zoiets bekomen:</p>
+
+                    <pre class="pre-scrollable"><code class="language-markup">&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />
+&lt;?xml-stylesheet type="text/xsl" href="android_XSL.xsl"?&gt;<br />
+&lt;XMLOpdracht&gt;<br />
+  &lt;label&gt;droid.png&lt;/label&gt;<br />
+  &lt;profiel&gt;<br />
+    &lt;naam&gt;Callebaut Gilles&lt;/naam&gt;<br />
+    &lt;foto&gt;Foto_Gilles_Callebaut.png&lt;/foto&gt;<br />
+    &lt;quote auteur="Isaac Asimov"&gt; I do not fear computers. I fear the lack of them.&lt;/quote&gt;<br />
+    &lt;klas&gt;2ELICT 2&lt;/klas&gt;<br />
+  &lt;/profiel&gt; <br />
+  &lt;androidVersies&gt;<br />
+    &lt;foto&gt;droid.jpg&lt;/foto&gt;<br />
+    &lt;fotoEvolutie&gt;evolutie.jpg&lt;/fotoEvolutie&gt;<br />
+    &lt;android versie="1.0 &amp;amp; 1.1"&gt;<br />
+      &lt;datumRelease&gt; 2008-09-23&lt;/datumRelease&gt;<br />
+      &lt;foto&gt;Android1.0.gif&lt;/foto&gt;<br />
+    &lt;/android&gt;<br />
+    &lt;foto&gt;android&lt;/foto&gt;<br />
+    &lt;android versie="1.5" naam="Cupcake"&gt;<br />
+      &lt;datumRelease&gt; 2009-04-30&lt;/datumRelease&gt;<br />
+      &lt;foto&gt;cupcake.jpg&lt;/foto&gt;<br />
+    &lt;/android&gt;<br />
+    &lt;android versie="1.6" naam="Donut"&gt;<br />
+      &lt;datumRelease&gt; 2009-09-15&lt;/datumRelease&gt;<br />
+      &lt;foto&gt;donut.jpg&lt;/foto&gt;<br />
+    &lt;/android&gt;<br />
+    &lt;android versie="2.0 &amp;amp; 2.1" naam="&#201;clair"&gt;<br />
+      &lt;datumRelease&gt; 2009-10-26&lt;/datumRelease&gt;<br />
+      &lt;foto&gt;eclair.jpg&lt;/foto&gt;<br />
+    &lt;/android&gt;<br />
+    &lt;android versie="2.2" naam="Froyo"&gt;<br />
+      &lt;datumRelease&gt; 2010-05-20&lt;/datumRelease&gt;<br />
+      &lt;foto&gt;froyo.png&lt;/foto&gt;<br />
+    &lt;/android&gt;<br />
+    &lt;android versie="2.3" naam="Gingerbread"&gt;<br />
+      &lt;datumRelease&gt; 2010-12-06&lt;/datumRelease&gt;<br />
+      &lt;foto&gt;gingerbread.jpg&lt;/foto&gt;<br />
+    &lt;/android&gt;<br />
+    &lt;android versie="3.0" naam="Honeycomb"&gt;<br />
+      &lt;datumRelease&gt; 2011-02-22&lt;/datumRelease&gt;<br />
+      &lt;foto&gt;honeycomb.jpg&lt;/foto&gt;<br />
+    &lt;/android&gt;<br />
+    &lt;android versie="4.0" naam="Ice Cream Sandwich"&gt;<br />
+      &lt;datumRelease&gt; 2011-10-19&lt;/datumRelease&gt;<br />
+      &lt;foto&gt;ICS.jpg&lt;/foto&gt;<br />
+    &lt;/android&gt;<br />
+    &lt;!-- ik zet KitKat opzettelijk boven Jelly Bean zodat ik zeker ben dat &lt;xsl: sort ... zijn werk doet--&gt;<br />
+    &lt;android versie="4.4" id="KitKat" naam="KitKat"&gt;<br />
+      &lt;datumRelease&gt; 2013-10-31&lt;/datumRelease&gt;<br />
+      &lt;foto&gt;KK.jpg&lt;/foto&gt;<br />
+      &lt;foto&gt;4.4.2.png&lt;/foto&gt;<br />
+    &lt;/android&gt;<br />
+    &lt;android versie="4.1 &amp;amp; 4.2 &amp;amp; 4.3" naam="Jelly Bean"&gt;<br />
+      &lt;datumRelease&gt; 2012-07-09&lt;/datumRelease&gt;<br />
+      &lt;foto&gt;JB.png&lt;/foto&gt;<br />
+    &lt;/android&gt;<br />
+  &lt;/androidVersies&gt;<br />
+  &lt;high-end_smartphones&gt;<br />
+    &lt;foto&gt;LGF.jpg&lt;/foto&gt;<br />
+    &lt;smartphone merk="Samsung" naam="Galaxy S5" id="01" idref="KitKat"&gt;<br />
+      &lt;foto&gt;S5.png&lt;/foto&gt;<br />
+      &lt;specificaties&gt;<br />
+        &lt;besturingssyteem_versie&gt;Android 4.4 Kitkat&lt;/besturingssyteem_versie&gt;<br />
+        &lt;kloksnelheid&gt;500 MHz&lt;/kloksnelheid&gt;<br />
+        &lt;processorkernen&gt;Quad Core Processor&lt;/processorkernen&gt;<br />
+        &lt;schermdiagonaal&gt;5,1 inch&lt;/schermdiagonaal&gt;<br />
+        &lt;schermresolutie&gt;1920 x 1080 pixels&lt;/schermresolutie&gt;<br />
+        &lt;werkgeheugen&gt;2048 MB&lt;/werkgeheugen&gt;<br />
+        &lt;opslagcapaciteit&gt;16 GB (uitbreidbaar)&lt;/opslagcapaciteit&gt;<br />
+        &lt;megapixel_camera&gt;16 megapixels &lt;/megapixel_camera&gt;<br />
+        &lt;accu&gt;2800 mAh&lt;/accu&gt;<br />
+        &lt;euro&gt;&amp;#x20AC;&lt;/euro&gt;&lt;prijs&gt; 699.99&lt;/prijs&gt;<br />
+      &lt;/specificaties&gt;<br />
+    &lt;/smartphone&gt;<br />
+<br />
+<br />
+<br />
+    &lt;smartphone merk="LG" naam="Nexus 5" id="03" idref="KitKat"&gt;<br />
+      &lt;foto&gt;Nexus5.jpg&lt;/foto&gt;<br />
+      &lt;specificaties&gt;<br />
+        &lt;besturingssyteem_versie&gt;Android 4.4 Kitkat&lt;/besturingssyteem_versie&gt;<br />
+        &lt;kloksnelheid&gt;2260 MHz&lt;/kloksnelheid&gt;<br />
+        &lt;processorkernen&gt;Quad Core Processor&lt;/processorkernen&gt;<br />
+        &lt;schermdiagonaal&gt;5,1 inch&lt;/schermdiagonaal&gt;<br />
+        &lt;schermresolutie&gt;1920 x 1080 pixels&lt;/schermresolutie&gt;<br />
+        &lt;werkgeheugen&gt;2048 MB&lt;/werkgeheugen&gt;<br />
+        &lt;opslagcapaciteit&gt;16 GB (niet uitbreidbaar)&lt;/opslagcapaciteit&gt;<br />
+        &lt;megapixel_camera&gt;8 megapixels &lt;/megapixel_camera&gt;<br />
+        &lt;accu&gt; 2300 mAh&lt;/accu&gt;<br />
+        &lt;euro&gt;&amp;#x20AC;&lt;/euro&gt;&lt;prijs&gt; 399.99&lt;/prijs&gt;<br />
+      &lt;/specificaties&gt;<br />
+    &lt;/smartphone&gt;<br />
+    &lt;smartphone merk="Sony" naam="XPERIA Z2" id="04" idref="KitKat"&gt;<br />
+      &lt;foto&gt;Z2.jpg&lt;/foto&gt;<br />
+      &lt;specificaties&gt;<br />
+        &lt;besturingssyteem_versie&gt;Android 4.4 Kitkat&lt;/besturingssyteem_versie&gt;<br />
+        &lt;kloksnelheid&gt;2300 MHz&lt;/kloksnelheid&gt;<br />
+        &lt;processorkernen&gt;Quad Core Processor&lt;/processorkernen&gt;<br />
+        &lt;schermdiagonaal&gt;5,2 inch&lt;/schermdiagonaal&gt;<br />
+        &lt;schermresolutie&gt;1920 x 1080 pixels&lt;/schermresolutie&gt;<br />
+        &lt;werkgeheugen&gt;3072 MB&lt;/werkgeheugen&gt;<br />
+        &lt;opslagcapaciteit&gt;16 GB (uitbreidbaar)&lt;/opslagcapaciteit&gt;<br />
+        &lt;megapixel_camera&gt;20,7 megapixels &lt;/megapixel_camera&gt;<br />
+        &lt;accu&gt;3200 mAh&lt;/accu&gt;<br />
+        &lt;euro&gt;&amp;#x20AC;&lt;/euro&gt;&lt;prijs&gt; 649.99&lt;/prijs&gt;<br />
+      &lt;/specificaties&gt;<br />
+    &lt;/smartphone&gt;<br />
+    &lt;smartphone merk="LG" naam="G2" id="05"&gt;<br />
+      &lt;foto&gt;G2.jpg&lt;/foto&gt;<br />
+      &lt;specificaties&gt;<br />
+        &lt;besturingssyteem_versie&gt;Android 4.2 Jelly Bean&lt;/besturingssyteem_versie&gt;<br />
+        &lt;kloksnelheid&gt;2260 MHz&lt;/kloksnelheid&gt;<br />
+        &lt;processorkernen&gt;Quad Core Processor&lt;/processorkernen&gt;<br />
+        &lt;schermdiagonaal&gt;5,2 inch&lt;/schermdiagonaal&gt;<br />
+        &lt;schermresolutie&gt;1920 x 1080 pixels&lt;/schermresolutie&gt;<br />
+        &lt;werkgeheugen&gt;2048 MB&lt;/werkgeheugen&gt;<br />
+        &lt;opslagcapaciteit&gt;16 GB (niet uitbreidbaar)&lt;/opslagcapaciteit&gt;<br />
+        &lt;megapixel_camera&gt;13 megapixels &lt;/megapixel_camera&gt;<br />
+        &lt;accu&gt;3000 mAh&lt;/accu&gt;<br />
+        &lt;euro&gt;&amp;#x20AC;&lt;/euro&gt;&lt;prijs&gt; 399.99&lt;/prijs&gt;<br />
+      &lt;/specificaties&gt;<br />
+    &lt;/smartphone&gt;<br />
+    &lt;smartphone merk="HTC" naam="One M8" id="02" idref="KitKat"&gt;<br />
+      &lt;foto&gt;M8.jpg&lt;/foto&gt;<br />
+      &lt;specificaties&gt;<br />
+        &lt;besturingssyteem_versie&gt;Android 4.4 Kitkat&lt;/besturingssyteem_versie&gt;<br />
+        &lt;kloksnelheid&gt;2300 MHz&lt;/kloksnelheid&gt;<br />
+        &lt;processorkernen&gt;Quad Core Processor&lt;/processorkernen&gt;<br />
+        &lt;schermdiagonaal&gt;5 inch&lt;/schermdiagonaal&gt;<br />
+        &lt;schermresolutie&gt;1920 x 1080 pixels&lt;/schermresolutie&gt;<br />
+        &lt;werkgeheugen&gt;2048 MB&lt;/werkgeheugen&gt;<br />
+        &lt;opslagcapaciteit&gt;16 GB (uitbreidbaar)&lt;/opslagcapaciteit&gt;<br />
+        &lt;megapixel_camera&gt;5 megapixels &lt;/megapixel_camera&gt;<br />
+        &lt;accu&gt;2600 mAh&lt;/accu&gt;<br />
+        &lt;euro&gt;&amp;#x20AC;&lt;/euro&gt;&lt;prijs&gt; 699.99&lt;/prijs&gt;<br />
+      &lt;/specificaties&gt;<br />
+    &lt;/smartphone&gt;<br />
+  &lt;/high-end_smartphones&gt;<br />
+&lt;/XMLOpdracht&gt;<br />
+</code></pre>
+
+                    <h2>Het maken van de XSD-file</h2>
+
+                    <p>Het maken van een XSD/SCHEMA-file is nodig omdat de XSD-file gaat zeggen dat android een kind-element is van androidVersies enzovoort. Ook is het handig om te weten met wat voor types van gegevens je zit te werken, ook dit staat in de XSD-file.</p>
+                    <p>Maar je kan gebruik maken van een <a href="http://www.freeformatter.com/xsd-generator.html" target="_blank">XSD generator</a> die het meeste werk voor u doet, je moet misschien enkel nog de types aanpassen.</p>
+                    <p>Als je mijn XSD-file door deze XSD generator gooit dan zie je heel kleine verschillen zoals het type decimal bij prijs in plaats van float. Maar deze verschillen zouden geen problemen mogen opleveren.</p>
+
+                    <pre class="pre-scrollable"><code class="language-markup">&lt;?xml version="1.0" encoding="utf-8"?&gt;<br />
+&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;<br />
+  &lt;xs:element name="XMLOpdracht"&gt;<br />
+    &lt;xs:complexType&gt;<br />
+      &lt;xs:sequence&gt;<br />
+        &lt;xs:element name="label" type="xs:string" /&gt;<br />
+        &lt;xs:element name="profiel"&gt;<br />
+          &lt;xs:complexType&gt;<br />
+            &lt;xs:sequence&gt;<br />
+              &lt;xs:element name="naam" type="xs:string" /&gt;<br />
+              &lt;xs:element name="foto" type="xs:string" /&gt;<br />
+              &lt;xs:element name="quote"&gt;<br />
+                &lt;xs:complexType&gt;<br />
+                  &lt;xs:simpleContent&gt;<br />
+                    &lt;xs:extension base="xs:string"&gt;<br />
+                      &lt;xs:attribute name="auteur" type="xs:string" use="required" /&gt;<br />
+                    &lt;/xs:extension&gt;<br />
+                  &lt;/xs:simpleContent&gt;<br />
+                &lt;/xs:complexType&gt;<br />
+              &lt;/xs:element&gt;<br />
+              &lt;xs:element name="klas" type="xs:string" /&gt;<br />
+            &lt;/xs:sequence&gt;<br />
+          &lt;/xs:complexType&gt;<br />
+        &lt;/xs:element&gt;<br />
+        &lt;xs:element name="androidVersies"&gt;<br />
+          &lt;xs:complexType&gt;<br />
+            &lt;xs:sequence&gt;<br />
+              &lt;xs:choice maxOccurs="unbounded"&gt;<br />
+                &lt;xs:element name="foto" type="xs:string" /&gt;<br />
+                &lt;xs:element name="fotoEvolutie" type="xs:string" /&gt;<br />
+                &lt;xs:element name="android"&gt;<br />
+                  &lt;xs:complexType&gt;<br />
+                    &lt;xs:sequence&gt;<br />
+                      &lt;xs:element name="datumRelease" type="xs:date" /&gt;<br />
+                      &lt;xs:element maxOccurs="unbounded" name="foto" type="xs:string" /&gt;<br />
+                    &lt;/xs:sequence&gt;<br />
+                    &lt;xs:attribute name="versie" type="xs:string" use="required" /&gt;<br />
+                    &lt;xs:attribute name="naam" type="xs:string" use="optional" /&gt;<br />
+                    &lt;xs:attribute name="id" type="xs:string" use="optional" /&gt;<br />
+                  &lt;/xs:complexType&gt;<br />
+                &lt;/xs:element&gt;<br />
+              &lt;/xs:choice&gt;<br />
+            &lt;/xs:sequence&gt;<br />
+          &lt;/xs:complexType&gt;<br />
+        &lt;/xs:element&gt;<br />
+        &lt;xs:element name="high-end_smartphones"&gt;<br />
+          &lt;xs:complexType&gt;<br />
+            &lt;xs:sequence&gt;<br />
+              &lt;xs:element name="foto" type="xs:string" /&gt;<br />
+              &lt;xs:element maxOccurs="unbounded" name="smartphone"&gt;<br />
+                &lt;xs:complexType&gt;<br />
+                  &lt;xs:sequence&gt;<br />
+                    &lt;xs:element name="foto" type="xs:string" /&gt;<br />
+                    &lt;xs:element name="specificaties"&gt;<br />
+                      &lt;xs:complexType&gt;<br />
+                        &lt;xs:sequence&gt;<br />
+                          &lt;xs:element name="besturingssyteem_versie" type="xs:string" /&gt;<br />
+                          &lt;xs:element name="kloksnelheid" type="xs:string" /&gt;<br />
+                          &lt;xs:element name="processorkernen" type="xs:string" /&gt;<br />
+                          &lt;xs:element name="schermdiagonaal" type="xs:string" /&gt;<br />
+                          &lt;xs:element name="schermresolutie" type="xs:string" /&gt;<br />
+                          &lt;xs:element name="werkgeheugen" type="xs:string" /&gt;<br />
+                          &lt;xs:element name="opslagcapaciteit" type="xs:string" /&gt;<br />
+                          &lt;xs:element name="megapixel_camera" type="xs:string" /&gt;<br />
+                          &lt;xs:element name="accu" type="xs:string" /&gt;<br />
+                          &lt;xs:element name="euro" type="xs:string" /&gt;<br />
+                          &lt;xs:element name="prijs" type="xs:decimal" /&gt;<br />
+                        &lt;/xs:sequence&gt;<br />
+                      &lt;/xs:complexType&gt;<br />
+                    &lt;/xs:element&gt;<br />
+                  &lt;/xs:sequence&gt;<br />
+                  &lt;xs:attribute name="merk" type="xs:string" use="required" /&gt;<br />
+                  &lt;xs:attribute name="naam" type="xs:string" use="required" /&gt;<br />
+                  &lt;xs:attribute name="id" type="xs:unsignedByte" use="required" /&gt;<br />
+                  &lt;xs:attribute name="idref" type="xs:string" use="optional" /&gt;<br />
+                &lt;/xs:complexType&gt;<br />
+              &lt;/xs:element&gt;<br />
+            &lt;/xs:sequence&gt;<br />
+          &lt;/xs:complexType&gt;<br />
+        &lt;/xs:element&gt;<br />
+      &lt;/xs:sequence&gt;<br />
+    &lt;/xs:complexType&gt;<br />
+  &lt;/xs:element&gt;<br />
+&lt;/xs:schema&gt;</code></pre>
+
+
+                    <h2>Het maken van de XSL-file</h2>
+
+                    <p>Nu komt het moeilijkste van heel dit project, het maken van de XSL-file.</p>
+                    <p>Een XSL-file is niets meer dan een Style Sheet voor XML, namelijk hoe moet mijn data vanuit mijn XML mooi en gestructureerd worden gerepresenteerd.</p>
+
+                    <h3>Opstellen van de pagina-templates</h3>
+                    <p>
+                        Eerst gaan we duidelijk onze pagina's defini&#235;ren door middel van <code>&lt;fo:layout-master-set&gt;</code> met daarin onze pagina-template <code>&lt;fo:simple-page-master master-name="naam" attribuut="waarde"&gt;</code>.
+                        Binnen de simpel-page-master gaan we een body, footer en een header gedeelte aanmaken d.m.v. <code>&lt;fo:region-body&gt;</code>, <code>&lt;fo:region-after&gt;</code> en <code>&lt;fo:region-before&gt;</code>.
+                        Als attributen voegen we nu de <code>page-width</code> en <code>page-height</code> toe en ook nog eventuele margins.
+                    </p>
+                    <pre class="pre-scrollable"><code class="language-markup">&lt;?xml version="1.0" encoding="utf-8"?&gt;<br />
+&lt;xsl:stylesheet version="1.0" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;<br />
+  &lt;xsl:output method="xml" version="1.0" indent="yes"/&gt;<br />
+<br />
+  &lt;xsl:template match="/"&gt;<br />
+    &lt;fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format"&gt;<br />
+<br />
+      &lt;!-- pagina templates --&gt;<br />
+      &lt;fo:layout-master-set&gt;<br />
+        &lt;!--ANDROID VOORBLAD--&gt;<br />
+        &lt;fo:simple-page-master master-name="Papier"<br />
+            margin-right="2.5cm"<br />
+            margin-left="2.5cm"<br />
+            margin-bottom="2cm"<br />
+           margin-top="1cm"<br />
+           page-width="21cm"<br />
+           page-height="29.7cm"&gt;<br />
+          &lt;fo:region-body region-name="body"/&gt;<br />
+          &lt;fo:region-before region-name="header" margin-bottom="5mm"   margin-top="5mm"/&gt;<br />
+          &lt;fo:region-after region-name="footer" margin-bottom="5mm"   margin-top="5mm"/&gt;<br />
+        &lt;/fo:simple-page-master&gt;</code></pre>
+                    <h3>Het gebruik van templates</h3>
+                    <p></p>
+                    <pre class="pre-scrollable"><code class="language-markup">&lt;?xml version="1.0" encoding="utf-8"?&gt;<br />
+&lt;xsl:stylesheet version="1.0" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;<br />
+  &lt;xsl:output method="xml" version="1.0" indent="yes"/&gt;<br />
+<br />
+  &lt;xsl:template match="/"&gt;<br />
+    &lt;fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format"&gt;<br />
+<br />
+      &lt;!-- pagina templates --&gt;<br />
+      &lt;fo:layout-master-set&gt;<br />
+        &lt;!--PROFIEL--&gt;<br />
+        &lt;fo:simple-page-master master-name="Profiel"<br />
+           margin-right="2cm"<br />
+           margin-left="2cm"<br />
+           margin-bottom="1cm"<br />
+           margin-top="5cm"<br />
+           page-width="21cm"<br />
+           page-height="29.7cm"&gt;<br />
+          &lt;fo:region-body region-name="body"/&gt;<br />
+          &lt;fo:region-after region-name="footer" margin-bottom="5mm"   margin-top="5mm"/&gt;<br />
+        &lt;/fo:simple-page-master&gt;<br />
+        &lt;!--ANDROID VOORBLAD--&gt;<br />
+        &lt;fo:simple-page-master master-name="AndroidVoorblad"<br />
+            margin-right="2.5cm"<br />
+            margin-left="2.5cm"<br />
+            margin-bottom="2cm"<br />
+           margin-top="1cm"<br />
+           page-width="21cm"<br />
+           page-height="29.7cm"&gt;<br />
+          &lt;fo:region-body region-name="body"/&gt;<br />
+          &lt;fo:region-before region-name="header" margin-bottom="5mm"   margin-top="5mm"/&gt;<br />
+          &lt;fo:region-after region-name="footer" margin-bottom="5mm"   margin-top="5mm"/&gt;<br />
+        &lt;/fo:simple-page-master&gt;<br />
+        &lt;!--ANDROID VERSIES--&gt;<br />
+        &lt;fo:simple-page-master master-name="Android"<br />
+            margin-right="2.5cm"<br />
+            margin-left="2.5cm"<br />
+            margin-bottom="2cm"<br />
+           margin-top="1cm"<br />
+           page-width="21cm"<br />
+           page-height="29.7cm"&gt;<br />
+          &lt;fo:region-body region-name="body" margin="1cm"/&gt;<br />
+          &lt;fo:region-before region-name="header" margin-bottom="5mm"   margin-top="5mm"/&gt;<br />
+          &lt;fo:region-after region-name="footer" margin-bottom="5mm"   margin-top="5mm"/&gt;<br />
+        &lt;/fo:simple-page-master&gt;<br />
+        &lt;!--SMARTPHONES--&gt;<br />
+        &lt;fo:simple-page-master master-name="Smartphones"<br />
+            margin-right="1.5cm"<br />
+             margin-left="1.5cm"<br />
+             margin-bottom="2cm"<br />
+            margin-top="1cm"<br />
+            page-width="21cm"<br />
+            page-height="29.7cm"&gt;<br />
+          &lt;fo:region-body region-name="body" margin="1cm"/&gt;<br />
+          &lt;fo:region-before region-name="header" margin-bottom="5mm"   margin-top="5mm" /&gt;<br />
+          &lt;fo:region-after region-name="footer" margin-bottom="5mm"   margin-top="5mm" /&gt;<br />
+        &lt;/fo:simple-page-master&gt;<br />
+      &lt;/fo:layout-master-set&gt;<br />
+<br />
+<br />
+<br />
+      &lt;!-- pagina inhoud --&gt;<br />
+<br />
+      &lt;!-- Eerste deel --&gt;<br />
+      &lt;!-- MIJN PROFIEL --&gt;<br />
+        &lt;fo:page-sequence master-reference="Profiel"&gt;<br />
+         &lt;!-- mijn footer --&gt;<br />
+         &lt;fo:static-content flow-name="footer"&gt;<br />
+           &lt;fo:block text-align-last="justify" font-size="12pt"  font-family="Times New Roman"  line-height="14pt" &gt;<br />
+             Gilles Callebaut<br />
+             &lt;fo:leader leader-pattern="space" /&gt; p. &lt;fo:page-number/&gt;<br />
+           &lt;/fo:block&gt;<br />
+         &lt;/fo:static-content&gt;<br />
+         &lt;!-- mijn profiel --&gt;<br />
+         &lt;fo:flow flow-name="body"&gt;<br />
+         &lt;fo:block margin-top ="0.5cm" padding-top="5px" padding-bottom="5px" text-align="center" background-color="#CC0000" color ="#FFFFFF" line-height="30pt" font-family="sans-serif" font-weight="bold" font-size="30pt"&gt;<br />
+           &lt;xsl:value-of select="/XMLOpdracht/profiel/naam"/&gt;<br />
+         &lt;/fo:block&gt;<br />
+         &lt;!-- tekst na elkaar weergeven --&gt;<br />
+         &lt;fo:block  text-align-last="justify" margin-top ="0.1cm" padding="5px" font-family="sans-serif"  font-size="17pt" text-align="left"&gt;<br />
+           Opdracht XML - Programmeren<br />
+           &lt;fo:leader leader-pattern="space" /&gt;<br />
+           &lt;xsl:value-of select="/XMLOpdracht/profiel/klas"/&gt;<br />
+         &lt;/fo:block&gt;<br />
+         &lt;!--foto van mezelf--&gt;<br />
+         &lt;fo:block padding-top="50px" padding-bottom="20px" text-align="center" background-color="#CC0000"&gt;<br />
+           &lt;fo:external-graphic src="{/XMLOpdracht/profiel/foto}" content-height="scale-to-fit" content-width="scale-to-fit" height="10cm" scaling="uniform"/&gt;<br />
+         &lt;/fo:block&gt;<br />
+           &lt;!--quote &amp; auteur--&gt;<br />
+         &lt;fo:block text-align="center" background-color="#CC0000" color ="#FFFFFF" line-height="18pt" font-family="ard-decode" font-size="16pt"&gt;<br />
+           &lt;xsl:value-of select="/XMLOpdracht/profiel/quote"/&gt;<br />
+         &lt;/fo:block &gt;<br />
+         &lt;fo:block padding-top="10px" padding-bottom="20px" text-align="center" background-color="#CC0000" color ="#FFFFFF" line-height="8pt" font-style="italic" font-size="13pt"&gt;<br />
+            ~ &lt;xsl:value-of select="/XMLOpdracht/profiel/quote/@auteur"/&gt;<br />
+          &lt;/fo:block &gt;<br />
+       &lt;/fo:flow&gt;<br />
+      &lt;/fo:page-sequence&gt;<br />
+<br />
+<br />
+<br />
+      &lt;!-- tweede deel --&gt;<br />
+      &lt;!-- ANDROID VOORBLAD --&gt;<br />
+      &lt;fo:page-sequence master-reference="AndroidVoorblad"&gt;<br />
+        &lt;!-- mijn header --&gt;<br />
+        &lt;fo:static-content flow-name="header"&gt;<br />
+          &lt;fo:block text-align="center" font-size="10pt"  font-family="Times New Roman"  line-height="14pt" &gt;<br />
+            De geschiedenis van Android!<br />
+          &lt;/fo:block&gt;<br />
+        &lt;/fo:static-content&gt;<br />
+        &lt;!-- mijn footer --&gt;<br />
+        &lt;fo:static-content flow-name="footer"&gt;<br />
+          &lt;fo:block text-align-last="justify" font-size="12pt"  font-family="Times New Roman"  line-height="14pt" &gt;<br />
+            Gilles Callebaut<br />
+            &lt;fo:leader leader-pattern="space" /&gt; p. &lt;fo:page-number/&gt;<br />
+          &lt;/fo:block&gt;<br />
+        &lt;/fo:static-content&gt;<br />
+        &lt;!-- Android voorpagina --&gt;<br />
+        &lt;fo:flow flow-name="body"&gt;<br />
+          &lt;fo:block margin-top ="2cm" margin-bottom ="3cm" text-align="center" color="#CC0000" line-height="30pt" font-family="sans-serif" font-weight="bold" font-size="30pt"&gt;<br />
+           De Geschiedenis van Android!<br />
+           &lt;/fo:block&gt;<br />
+          &lt;fo:block text-align="center"&gt;<br />
+            &lt;fo:external-graphic src="{/XMLOpdracht/androidVersies/foto}" content-height="scale-to-fit" content-width="scale-to-fit" height="10cm" scaling="uniform" /&gt;<br />
+          &lt;/fo:block&gt;<br />
+          &lt;fo:block margin-top ="1cm" padding-top="2px" font-family="sans-serif" text-align="center" font-size="12pt" &gt;<br />
+            Op de volgende pagina's bespreken we heel kort welke versies van Android er bestaan.<br />
+          &lt;/fo:block&gt;<br />
+          &lt;fo:block text-align="center"&gt;<br />
+            &lt;fo:external-graphic src="{/XMLOpdracht/androidVersies/fotoEvolutie}" content-height="scale-to-fit" width="18cm" content-width="scale-to-fit"  scaling="uniform" /&gt;<br />
+          &lt;/fo:block&gt;<br />
+        &lt;/fo:flow&gt;<br />
+      &lt;/fo:page-sequence&gt;<br />
+<br />
+<br />
+<br />
+      &lt;!--derde deel--&gt;<br />
+      &lt;!--ANDROID VERSIES--&gt;<br />
+      &lt;fo:page-sequence master-reference="Android"&gt;<br />
+        &lt;!-- mijn footer --&gt;<br />
+        &lt;fo:static-content flow-name="footer"&gt;<br />
+          &lt;fo:block text-align-last="justify" font-size="12pt"  font-family="Times New Roman"  line-height="14pt" &gt;<br />
+            Gilles Callebaut<br />
+            &lt;fo:leader leader-pattern="space" /&gt; p. &lt;fo:page-number/&gt;<br />
+          &lt;/fo:block&gt;<br />
+        &lt;/fo:static-content&gt;<br />
+        &lt;!-- mijn header --&gt;<br />
+        &lt;fo:static-content flow-name="header"&gt;<br />
+          &lt;fo:block text-align="center" font-size="10pt"  font-family="Times New Roman"  line-height="14pt" &gt;<br />
+            De geschiedenis van Android!<br />
+          &lt;/fo:block&gt;<br />
+        &lt;/fo:static-content&gt;<br />
+        &lt;!--toepassen van de android templates--&gt;<br />
+        &lt;fo:flow flow-name="body"&gt;<br />
+          &lt;xsl:apply-templates select="XMLOpdracht/androidVersies"/&gt;<br />
+        &lt;/fo:flow&gt;<br />
+      &lt;/fo:page-sequence&gt;<br />
+<br />
+<br />
+<br />
+      &lt;!--vierde deel--&gt;<br />
+      &lt;!--HIGH-END SMARTPHONES--&gt;<br />
+      &lt;fo:page-sequence master-reference="Smartphones"&gt;<br />
+        &lt;!-- mijn header --&gt;<br />
+        &lt;fo:static-content flow-name="header"&gt;<br />
+          &lt;fo:block text-align="center" font-size="10pt"  font-family="Times New Roman"  line-height="14pt" &gt;<br />
+            High-end (android) smartphones<br />
+          &lt;/fo:block&gt;<br />
+        &lt;/fo:static-content&gt;<br />
+        &lt;!-- mijn footer --&gt;<br />
+        &lt;fo:static-content flow-name="footer"&gt;<br />
+          &lt;fo:block text-align-last="justify" font-size="10pt"  font-family="Times New Roman"  line-height="14pt" &gt;<br />
+            Gilles Callebaut<br />
+            &lt;fo:leader leader-pattern="space" /&gt; p. &lt;fo:page-number/&gt;<br />
+          &lt;/fo:block&gt;<br />
+        &lt;/fo:static-content&gt;<br />
+        &lt;!-- Smartphone voorpagina --&gt;<br />
+        &lt;fo:flow flow-name="body"&gt;<br />
+          &lt;fo:block margin-top ="2cm" margin-bottom ="2cm" text-align="center" color="#CC0000" line-height="30pt" font-family="sans-serif" font-weight="bold" font-size="30pt"&gt;<br />
+            De High-end smartphones op dit moment!<br />
+          &lt;/fo:block&gt;<br />
+          &lt;fo:block text-align="center"&gt;<br />
+            &lt;fo:external-graphic src="{XMLOpdracht/high-end_smartphones/foto}" content-height="scale-to-fit" content-width="scale-to-fit" height="10cm" scaling="uniform" /&gt;<br />
+          &lt;/fo:block&gt;<br />
+          &lt;fo:block margin-top ="1cm" padding-top="2px" font-family="sans-serif" text-align="center" font-size="10pt" &gt;<br />
+            Op de volgende pagina's bespreken we enkele high-end smartphones.<br />
+          &lt;/fo:block&gt;<br />
+        &lt;/fo:flow&gt;<br />
+      &lt;/fo:page-sequence&gt;<br />
+<br />
+      &lt;!--toepassen van de smartphone templates--&gt;<br />
+      &lt;fo:page-sequence master-reference="Smartphones"&gt;<br />
+        &lt;!-- mijn header --&gt;<br />
+        &lt;fo:static-content flow-name="header"&gt;<br />
+          &lt;fo:block text-align="center" font-size="10pt"  font-family="Times New Roman"  line-height="14pt" &gt;<br />
+            High-end (Android) smartphones<br />
+          &lt;/fo:block&gt;<br />
+        &lt;/fo:static-content&gt;<br />
+        &lt;!-- mijn footer --&gt;<br />
+        &lt;fo:static-content flow-name="footer"&gt;<br />
+          &lt;fo:block text-align-last="justify" font-size="12pt"  font-family="Times New Roman"  line-height="14pt" &gt;<br />
+            Gilles Callebaut<br />
+            &lt;fo:leader leader-pattern="space" /&gt; p. &lt;fo:page-number/&gt;<br />
+          &lt;/fo:block&gt;<br />
+        &lt;/fo:static-content&gt;<br />
+      &lt;fo:flow flow-name="body"&gt;<br />
+        &lt;xsl:apply-templates select="XMLOpdracht/high-end_smartphones/smartphone"&gt;<br />
+          &lt;!--Als de prijs hetzelfde is zal het kleinste id primeren--&gt;<br />
+          &lt;xsl:sort select="specificaties/prijs"/&gt;<br />
+          &lt;xsl:sort select="@id"/&gt; <br />
+        &lt;/xsl:apply-templates&gt;<br />
+      &lt;/fo:flow&gt;<br />
+      &lt;/fo:page-sequence&gt;<br />
+<br />
+      &lt;!--lijst--&gt;<br />
+      &lt;fo:page-sequence master-reference="Smartphones"&gt;<br />
+        &lt;!-- mijn footer --&gt;<br />
+        &lt;fo:static-content flow-name="footer"&gt;<br />
+          &lt;fo:block text-align-last="justify" font-size="12pt"  font-family="Times New Roman"  line-height="14pt" &gt;<br />
+            Gilles Callebaut<br />
+            &lt;fo:leader leader-pattern="space" /&gt; p. &lt;fo:page-number/&gt;<br />
+          &lt;/fo:block&gt;<br />
+        &lt;/fo:static-content&gt;<br />
+        &lt;fo:flow flow-name="body"&gt;<br />
+          &lt;fo:block margin-top ="1cm" margin-bottom ="1cm" text-align="center" color="#CC0000" line-height="30pt" font-family="sans-serif" font-weight="bold" font-size="30pt"&gt;<br />
+            Voor meer info over android: &lt;/fo:block&gt;<br />
+          &lt;fo:list-block&gt;<br />
+          &lt;fo:list-item  space-after="0.5cm"&gt;<br />
+                &lt;fo:list-item-label end-indent="label-end()*2"&gt;<br />
+                  &lt;fo:block&gt;<br />
+                    &lt;fo:external-graphic src="{XMLOpdracht/label}" content-height="scale-to-fit" height="6mm" content-width="scale-to-fit" scaling="uniform" /&gt;<br />
+                  &lt;/fo:block&gt;<br />
+                &lt;/fo:list-item-label&gt;<br />
+                &lt;fo:list-item-body start-indent="body-start()*2"&gt;<br />
+                  &lt;fo:block&gt;<br />
+                    http://www.xda-developers.com/<br />
+                  &lt;/fo:block&gt;<br />
+                &lt;/fo:list-item-body&gt;<br />
+              &lt;/fo:list-item&gt;<br />
+<br />
+            &lt;fo:list-item  space-after="0.5cm"&gt;<br />
+            &lt;fo:list-item-label end-indent="label-end()*2"&gt;<br />
+              &lt;fo:block&gt;<br />
+                &lt;fo:external-graphic src="{XMLOpdracht/label}" content-height="scale-to-fit" height="6mm" content-width="scale-to-fit" scaling="uniform" /&gt;<br />
+              &lt;/fo:block&gt;<br />
+            &lt;/fo:list-item-label&gt;<br />
+            &lt;fo:list-item-body start-indent="body-start()*2"&gt;<br />
+              &lt;fo:block&gt;<br />
+                http://developer.android.com/index.html<br />
+              &lt;/fo:block&gt;<br />
+            &lt;/fo:list-item-body&gt;<br />
+            &lt;/fo:list-item&gt;<br />
+<br />
+            &lt;fo:list-item  space-after="0.5cm"&gt;<br />
+              &lt;fo:list-item-label end-indent="label-end()*2"&gt;<br />
+                &lt;fo:block&gt;<br />
+                  &lt;fo:external-graphic src="{XMLOpdracht/label}" content-height="scale-to-fit" height="6mm" content-width="scale-to-fit" scaling="uniform" /&gt;<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:list-item-label&gt;<br />
+              &lt;fo:list-item-body start-indent="body-start()*2"&gt;<br />
+                &lt;fo:block&gt;<br />
+                  http://www.cyanogenmod.org/<br />
+                  (costum ROM's)<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:list-item-body&gt;<br />
+            &lt;/fo:list-item&gt;<br />
+<br />
+            &lt;fo:list-item&gt;<br />
+              &lt;fo:list-item-label end-indent="label-end()*2"&gt;<br />
+                &lt;fo:block&gt;<br />
+                  &lt;fo:external-graphic src="{XMLOpdracht/label}" content-height="scale-to-fit" height="6mm" content-width="scale-to-fit" scaling="uniform" /&gt;<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:list-item-label&gt;<br />
+              &lt;fo:list-item-body start-indent="body-start()*2"&gt;<br />
+                &lt;fo:block&gt;<br />
+                  http://xda-university.com/<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:list-item-body&gt;<br />
+            &lt;/fo:list-item&gt;<br />
+<br />
+          &lt;/fo:list-block&gt;<br />
+<br />
+          &lt;fo:block margin-top ="2cm" margin-bottom ="1cm" text-align="center" color="#CC0000" line-height="30pt" font-family="sans-serif" font-weight="bold" font-size="30pt"&gt;<br />
+            Voor meer info over XML &lt;xsl:text&gt;&amp;amp;&lt;/xsl:text&gt; XSL:<br />
+          &lt;/fo:block&gt;<br />
+          &lt;fo:list-block&gt;<br />
+            &lt;fo:list-item space-after="0.5cm"&gt;<br />
+              &lt;fo:list-item-label end-indent="label-end()*2"&gt;<br />
+                &lt;fo:block&gt;<br />
+                  &amp;#x2022;<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:list-item-label&gt;<br />
+              &lt;fo:list-item-body start-indent="body-start()*2"&gt;<br />
+                &lt;fo:block&gt;<br />
+                  http://www.schemacentral.com/sc/fo11/s-fo.xsd.html<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:list-item-body&gt;<br />
+            &lt;/fo:list-item&gt;<br />
+<br />
+            &lt;fo:list-item&gt;<br />
+            &lt;fo:list-item-label end-indent="label-end()*2"&gt;<br />
+              &lt;fo:block&gt;<br />
+                &amp;#x2022;<br />
+              &lt;/fo:block&gt;<br />
+            &lt;/fo:list-item-label&gt;<br />
+            &lt;fo:list-item-body start-indent="body-start()*2"&gt;<br />
+              &lt;fo:block&gt;<br />
+                http://www.w3schools.com/<br />
+              &lt;/fo:block&gt;<br />
+            &lt;/fo:list-item-body&gt;<br />
+            &lt;/fo:list-item&gt;           <br />
+          &lt;/fo:list-block&gt;<br />
+        &lt;/fo:flow&gt;<br />
+      &lt;/fo:page-sequence&gt;<br />
+      &lt;/fo:root&gt;<br />
+  &lt;/xsl:template&gt;<br />
+<br />
+<br />
+<br />
+  &lt;!--templates voor ANDROID GESCHIEDENIS--&gt;<br />
+  &lt;xsl:template match="androidVersies"&gt;<br />
+    &lt;xsl:apply-templates select="android"&gt;<br />
+      &lt;xsl:sort select="datumRelease"/&gt;<br />
+    &lt;/xsl:apply-templates&gt;<br />
+  &lt;/xsl:template&gt;<br />
+<br />
+  &lt;xsl:template match="android"&gt;<br />
+    &lt;fo:block keep-together.within-page="always"  margin-top="1cm" margin-bottom="3cm" height="10cm" width="10cm"&gt;<br />
+      &lt;fo:block margin-top ="1cm" margin-bottom ="0.5cm" text-align="center" color="#CC0000"  font-family="sans-serif" font-size="25pt"&gt;<br />
+        &lt;xsl:value-of select="@naam"/&gt;<br />
+        &lt;!-- gebruiken van choose --&gt;<br />
+        &lt;!-- om te tonen dat de eerste versie geen naam heeft --&gt;<br />
+        &lt;!-- en de rest toont zijn versie--&gt;<br />
+        &lt;xsl:choose&gt;<br />
+          &lt;xsl:when test = "@versie ='1.0 &amp;amp; 1.1'"&gt;<br />
+            &lt;fo:block&gt;<br />
+              &lt;xsl:value-of select="@versie"/&gt;<br />
+            &lt;/fo:block&gt;<br />
+            &lt;fo:block font-size="10pt"  font-style="italic" color="#666699" font-family="Times New Roman" font-weight="lighter" line-height="14pt"&gt; <br />
+              Deze versie had geen bijnaam meegekregen.<br />
+           &lt;/fo:block&gt;<br />
+          &lt;/xsl:when &gt;<br />
+          &lt;xsl:otherwise&gt;<br />
+            &lt;fo:block font-size="14pt"  font-style="italic" color="#666699" font-family="Times New Roman" font-weight="lighter" line-height="20pt"&gt;<br />
+              &lt;xsl:value-of select="@versie"/&gt;<br />
+            &lt;/fo:block&gt;<br />
+          &lt;/xsl:otherwise&gt;<br />
+        &lt;/xsl:choose&gt;<br />
+      &lt;/fo:block&gt;<br />
+<br />
+      &lt;fo:block text-align="left" font-size="12pt"  font-weight="lighter"  font-family="Helvetica"  line-height="14pt"&gt;<br />
+        Datum van release:<br />
+      &lt;/fo:block&gt;<br />
+      &lt;fo:block text-align="left" font-size="12pt"  font-family="Times New Roman"  line-height="14pt"&gt;<br />
+        &lt;xsl:for-each select="datumRelease"&gt;<br />
+          &lt;!--vervelende date-format omzetten via substring(string,start-index,lengte) en door trial and error zoeken welke index bij wat hoort--&gt;<br />
+          &lt;xsl:value-of select="concat(substring(., 10, 2), '-', substring(., 7, 2), '-', substring(., 2, 4))"/&gt;<br />
+        &lt;/xsl:for-each&gt;<br />
+      &lt;/fo:block&gt;<br />
+      &lt;fo:block text-align="center" space-after="2cm"&gt;<br />
+        &lt;fo:external-graphic src="{foto}" content-height="scale-to-fit" height="5cm" content-width="scale-to-fit" scaling="uniform" /&gt;<br />
+      &lt;/fo:block&gt;<br />
+    &lt;/fo:block&gt;<br />
+  &lt;/xsl:template&gt;<br />
+<br />
+<br />
+<br />
+   &lt;!--SMARTPHONES templates--&gt;<br />
+  &lt;xsl:template match="smartphone"&gt;<br />
+    &lt;fo:block keep-together.within-page="always" margin-top="1cm" padding-top="10px" padding-bottom="5px" text-align="center"&gt;<br />
+      &lt;fo:block background-color="#CC0000" color ="#FFFFFF" line-height="40pt" font-family="sans-serif" font-weight="bold" font-size="20pt"&gt;<br />
+        &lt;xsl:value-of select="@merk"/&gt;<br />
+        &lt;xsl:text&gt; - &lt;/xsl:text&gt;<br />
+        &lt;xsl:value-of select="@naam"/&gt;<br />
+      &lt;/fo:block&gt;<br />
+      &lt;fo:block margin-top ="1cm"&gt;<br />
+        &lt;fo:external-graphic  src="{foto}"  content-height="scale-to-fit" width="10cm" content-width="scale-to-fit" scaling="uniform"/&gt;<br />
+      &lt;/fo:block&gt;<br />
+      &lt;!--Als ze het nieuwste besturingssysteem hebben--&gt;<br />
+      &lt;xsl:if test="@idref='KitKat'"&gt;<br />
+        &lt;fo:block  text-align-last="justify" margin-top ="-1cm" space-after="2cm" text-align="left" color="#CC0000"&gt;<br />
+            Deze smartphone draait op de nieuwste Android versie!<br />
+          &lt;fo:leader leader-pattern="space" /&gt;<br />
+            &lt;fo:external-graphic  src='url(KK_4.jpg)'  content-height="scale-to-fit" width="3cm" content-width="scale-to-fit" scaling="uniform"/&gt;<br />
+        &lt;/fo:block&gt;<br />
+      &lt;/xsl:if&gt;<br />
+      &lt;xsl:apply-templates select="specificaties"/&gt;<br />
+      &lt;!--voor de estetiek--&gt;<br />
+      &lt;fo:block line-height="10pt" color ="#CC0000" background-color="#CC0000"&gt;.&lt;/fo:block&gt;<br />
+    &lt;/fo:block&gt; <br />
+   &lt;/xsl:template&gt;<br />
+<br />
+  &lt;xsl:template match="specificaties"&gt;<br />
+    &lt;fo:block text-align="left" keep-together.within-page="always"  margin-top ="-1cm" padding-top="10px" padding-bottom="5px"&gt;<br />
+      &lt;fo:block text-align="left" color="#CC0000" space-after="0.5cm" line-height="15pt" font-family="sans-serif" font-weight="300" font-size="15pt"&gt; <br />
+        Specificaties<br />
+      &lt;/fo:block&gt;<br />
+<br />
+      &lt;!--tabel met alle specificaties in--&gt;<br />
+        &lt;fo:table text-align="left"&gt;<br />
+          &lt;fo:table-body &gt;<br />
+            &lt;fo:table-row&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px"&gt;<br />
+                &lt;fo:block&gt;Besturingssysteem&lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px"&gt;<br />
+                &lt;fo:block&gt;<br />
+                  &lt;xsl:value-of select="besturingssyteem_versie"/&gt;<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+            &lt;/fo:table-row&gt;<br />
+            &lt;fo:table-row&gt;<br />
+              &lt;fo:table-cell  border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;kloksnelheid&lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block  &gt;<br />
+                  &lt;xsl:value-of select="kloksnelheid"/&gt;<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+            &lt;/fo:table-row&gt;<br />
+            &lt;fo:table-row&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;processorkernen&lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;<br />
+                  &lt;xsl:value-of select="processorkernen"/&gt;<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+            &lt;/fo:table-row&gt;<br />
+            &lt;fo:table-row&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;schermdiagonaal&lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;<br />
+                  &lt;xsl:value-of select="schermdiagonaal"/&gt;<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+            &lt;/fo:table-row&gt;<br />
+            &lt;fo:table-row&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;schermresolutie&lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;<br />
+                  &lt;xsl:value-of select="schermresolutie"/&gt;<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+            &lt;/fo:table-row&gt;<br />
+            &lt;fo:table-row&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;werkgeheugen&lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;<br />
+                  &lt;xsl:value-of select="werkgeheugen"/&gt;<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+            &lt;/fo:table-row&gt;<br />
+            &lt;fo:table-row&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;opslagcapaciteit&lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;<br />
+                  &lt;xsl:value-of select="opslagcapaciteit"/&gt;<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+            &lt;/fo:table-row&gt;<br />
+            &lt;fo:table-row&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;camera&lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;<br />
+                  &lt;xsl:value-of select="megapixel_camera"/&gt;<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+            &lt;/fo:table-row&gt;<br />
+            &lt;fo:table-row&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;accu&lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;<br />
+                  &lt;xsl:value-of select="accu"/&gt;<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+            &lt;/fo:table-row&gt;<br />
+            &lt;fo:table-row&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;prijs&lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+              &lt;fo:table-cell border-top-width="0.5px" padding="5px" border-top-style="solid" border-top-color="#CC0000"&gt;<br />
+                &lt;fo:block&gt;<br />
+                  &lt;xsl:value-of select="euro"/&gt;<br />
+                  &lt;xsl:value-of select="prijs"/&gt;<br />
+                &lt;/fo:block&gt;<br />
+              &lt;/fo:table-cell&gt;<br />
+            &lt;/fo:table-row&gt;<br />
+          &lt;/fo:table-body&gt;<br />
+        &lt;/fo:table&gt;<br />
+    &lt;/fo:block&gt;<br />
+  &lt;/xsl:template&gt;<br />
+<br />
+&lt;/xsl:stylesheet&gt;</code></pre>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="jumbotron text-center">
+                    <h1>Onder constructie</h1>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                            <span class="sr-only">Even geduld, onder constructie</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="push"></div>
+    <a href="#" class="back-to-top"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    <script language="JavaScript" type="text/javascript" src="js/footer.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            var offset = 120;
+            var duration = 500;
+            var opScherm = false;
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > offset) {
+                    jQuery('.back-to-top').fadeIn(duration);
+                    opScherm = true;
+                } else {
+                    jQuery('.back-to-top').fadeOut(duration);
+                }
+            });
+
+
+            jQuery('.back-to-top').click(function (event) {
+                event.preventDefault();
+                jQuery('html, body').animate({ scrollTop: 0 }, duration);
+                return false;
+            })
+        });
+    </script>
+
+
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>

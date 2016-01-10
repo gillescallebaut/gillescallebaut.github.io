@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+
+<html lang="nl" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Facebook -->
+	<meta property="og:description" content="Welkom op mijn site. <br> ik ben Student Industrieel Ingenieur ICT, die zelfd buiten zijn schooluren iets meer wil leren, vandaar ook deze site!" />
+	<meta property="og:image" content="afbeeldingen/gilles.jpg">
+
+	<link rel='image_src' href='afbeeldingen/gilles.jpg' type='image/jpg'>
+
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="fonts/code/stylesheet.css" rel="stylesheet">
+	<link href="css/style-home.css" rel="stylesheet">
+
+	<meta name="keywords" content="Gilles Callebaut, GUI, XML, Java, Android, Chocolate Code, ict, kaho, sint-lieven, kuleuven, student,website,jquery,javascript,css,css3,html,html5,dropbox,samenvattingen,industrieel, ingenieur, industrieel ingenieur">
+	<meta name="author" content="Gilles Callebaut">
+	<meta name="description" content="Chocolate Code, gratis Java tutorials.">
+	<meta name="revisit-after" content="1 day">
+	<title>Chocolate Code</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+
+
+	<style>
+
+		.hidden {
+			visibility: hidden;
+			opacity: 0;
+			transition: visibility 0s 2s, opacity 2s linear;
+		}
+
+		.visible {
+			visibility: visible;
+			opacity: 1;
+			transition: opacity 2s linear;
+		}
+
+		.effect {
+			-webkit-transition: all 3s ease-in-out 0.5s;
+			transition: all 3s ease-in-out 0.5s;
+		}
+
+		.head-navbar {
+			position: fixed;
+			top: 0px;
+		}
+
+		#img-header img {
+			width: 100%;
+			z-index: -100;
+			position: relative;
+			left: 0;
+			top: 0;
+		}
+		.pull-up{
+			margin-top:-20px;
+		}
+
+	</style>
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+</head>
+<body>
+	<div id="wrapper">
+		<div class="hidden-sm hidden-xs" id="img-header">
+			<img class="img-header"src="afbeeldingen/header.png"/>
+		</div>
+
+		<script language="JavaScript" type="text/javascript" src="js/header.js"></script>
+
+		<div id="content">
+
+			<div class="container">
+				<div class="featurette">
+					<a href="biblio.html"><img class="featurette-image hidden-xs hidden-sm img-circle pull-right blue" src="afbeeldingen/gilles.jpg"></a>
+					<a href="biblio.html"><img class="featurette-image hidden-md hidden-lg hidden-xs img-circle pull-right blue" width="250px" height="250px" src="afbeeldingen/gilles.jpg"></a>
+					<p><br /><br /></p>
+					<h1 class="featurette-heading">Gilles Callebaut. <span class="text-muted">Student Industrieel Ingenieur ICT.</span></h1>
+					<a href="biblio.html"><img class="featurette-image hidden-md hidden-lg hidden-sm img-circle pull-right blue" width="150px" height="150px" src="afbeeldingen/gilles.jpg"></a>
+					<p class="lead">Ik ben een student Industrieel Ingenieur - ELICT, <br />die <strong>zelf</strong> buiten zijn schooluren iets meer wil leren, <br />vandaar ook deze site!</p>
+					<small>Stephanie, mijn steun en toeverlaat.</small>
+				</div><!-- ./featurette -->
+			</div><!-- ./container -->
+
+			<div class="push"></div>
+
+			<div class="jumbotron">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-sm-4 col-xs-12">
+							<img class="featurette-image pull-left hidden-xs" height="300px" src="afbeeldingen/java-tut/java-logo.png">
+							<img class="featurette-image hidden-sm hidden-lg hidden-md text-center" height="150px" src="afbeeldingen/java-tut/java-logo.png">
+						</div>
+						<div class="col-md-9 col-sm-8 col-xs-12">
+							<h1>Maak kennis met Java!</h1>
+							<p>
+								Volg mijn korte, simpele tutorials voor het begrijpen en leren van de programmeertaal Java.
+								We beginnen met het installeren van het ontwerpplatform Eclipse en gaan zo over naar de meest courante data types en structuren.
+								Een groot voordeel van het programmeren in Java is dat het gratis is -en dus ook eclipse-.
+							</p>
+							<p><a class="btn btn-primary btn-lg" role="button" href="java-tutorials/java-tut.html">Bekijk de tutorials</a></p>
+						</div>
+					</div><!-- ./row -->
+				</div><!-- ./container -->
+			</div><!-- ./jumbotron -->
+
+			<div class="container">
+				<div class="push"></div>
+				<div class="row">
+					<div class="col-md-4 text-center">
+						<img class="img-circle" src="afbeeldingen/Shopping-list/icon_qr.png" width="140px">
+						<h2>Shopping list</h2>
+						<p>
+							Momenteel ook in volle ontwikkeling.<br><br>
+							Deze -Android- applicatie zal in staat zijn om producten te scannen via een QR-code of een gewone barcode om zo het product toe te voegen aan een shopping list.
+							<br>
+						</p>
+						<p><a class="btn btn-default" href="shopping-list.html">Lees meer »</a></p>
+					</div>
+					<div class="col-md-4 text-center">
+						<img class="img-circle" src="afbeeldingen/slavino-logo.png" width="140px">
+						<h2>Slavino - Mijn eerste Android applicatie</h2>
+						<p>Momenteel in volle ontwikkeling</p>
+						<p><a class="btn btn-default" style="cursor: not-allowed;">Lees meer »</a></p>
+					</div>
+					<div class="col-md-4 text-center">
+						<img src="afbeeldingen/java-tut/java-logo.png" height="140px">
+						<h2>Ontdek Java!</h2>
+						<p>
+							Java is een programmeertaal die niet meer weg te denken is uit deze wereld.
+							Als je voor de eerste keer een programmeertaal wilt leren dan is Java de juiste keuze. Het is een logische, maar toch veelvoudige taal.
+						</p>
+						<p><a class="btn btn-default" href="java-tutorials/java-tut.html">Lees meer »</a></p>
+					</div>
+				</div><!-- ./row -->
+			</div><!-- ./container -->
+
+		</div><!-- ./content -->
+
+		<a href="#" class="back-to-top hidden-sm hidden-xs">
+			<span class="glyphicon glyphicon-chevron-up pull-right top"></span>
+		</a>
+
+		<script src="js/footer.js"></script>
+
+	</div><!-- ./wrapper -->
+
+	<script src="js/bootstrap.js"></script>
+
+
+	<script>
+		$(window).load(function() {
+			var offset = 120;
+			var duration = 500;
+			var scrollBottom = $(window).scrollTop() + $(window).height();
+
+			if ($(window).width() > 768) {
+				$('.navbar').removeClass('navbar-fixed-top');
+			}
+			var origOffsetY = $('.navbar').offset().top;
+
+			jQuery(window).scroll(function () {
+				/* button up*/
+
+				if (jQuery(this).scrollTop() <= origOffsetY || ($(window).scrollTop() + $(window).height() > $(document).height() - 225)) {
+					jQuery('.back-to-top').fadeOut(duration);
+				} else {
+					jQuery('.back-to-top').fadeIn(duration);
+				}
+
+				/* navbar */
+				if(origOffsetY!=0){
+					if ($(window).scrollTop() >= origOffsetY) {
+						$('#img-header').addClass('hidden');
+						$('.navbar').addClass('navbar-fixed-top'); 
+						origOffsetY=0;
+						jQuery('html, body').scrollTop(0);               
+					}
+
+					if (jQuery(this).scrollTop() = origOffsetY) {
+						jQuery('.back-to-top').fadeOut(duration);
+					}
+				}
+			});
+
+			jQuery('.back-to-top').click(function (event) {
+				event.preventDefault();
+				jQuery('html, body').animate({ scrollTop: 0 }, duration);
+				jQuery('.back-to-top').fadeOut(duration);
+				return false;
+			})
+			jQuery('.top').click(function (event) {
+				event.preventDefault();
+				jQuery('html, body').animate({ scrollTop: 0 }, duration);
+				jQuery('.back-to-top').fadeOut(duration);
+				return false;
+			})
+
+
+		});
+</script>
+
+</body>
+</html>
