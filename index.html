@@ -1,208 +1,123 @@
-﻿<!DOCTYPE html>
-
-<html lang="nl" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="shortcut icon" href="favicon.ico">
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-	<!-- Facebook -->
-	<meta property="og:description" content="Welkom op mijn site. <br> ik ben Student Industrieel Ingenieur ICT, die zelfd buiten zijn schooluren iets meer wil leren, vandaar ook deze site!" />
-	<meta property="og:image" content="afbeeldingen/gilles.jpg">
-
-	<link rel='image_src' href='afbeeldingen/gilles.jpg' type='image/jpg'>
-
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="fonts/code/stylesheet.css" rel="stylesheet">
-	<link href="css/style-home.css" rel="stylesheet">
-
-	<meta name="keywords" content="Gilles Callebaut, GUI, XML, Java, Android, Chocolate Code, ict, kaho, sint-lieven, kuleuven, student,website,jquery,javascript,css,css3,html,html5,dropbox,samenvattingen,industrieel, ingenieur, industrieel ingenieur">
-	<meta name="author" content="Gilles Callebaut">
-	<meta name="description" content="Chocolate Code, gratis Java tutorials.">
-	<meta name="revisit-after" content="1 day">
-	<title>Chocolate Code</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
+          integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 
 
+    <title>Gilles Callebaut</title>
 
-	<style>
+    <style>
 
-		.hidden {
-			visibility: hidden;
-			opacity: 0;
-			transition: visibility 0s 2s, opacity 2s linear;
-		}
+        body{
+            background-color: transparent;
+        }
 
-		.visible {
-			visibility: visible;
-			opacity: 1;
-			transition: opacity 2s linear;
-		}
+        html {
+            background: url(background.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        nav{
+            background-color: transparent !important;
+        }
+        @media (min-width: 768px) {
+            .navbar .navbar-nav {
+                display: inline-block;
+                float: none;
+                vertical-align: top;
+            }
 
-		.effect {
-			-webkit-transition: all 3s ease-in-out 0.5s;
-			transition: all 3s ease-in-out 0.5s;
-		}
+            .navbar .collapse {
+                text-align: center;
+            }
+            .navbar-nav > li{
+                margin-left: 100px;
+                margin-right: 100px;
+            }
+        }
 
-		.head-navbar {
-			position: fixed;
-			top: 0px;
-		}
-
-		#img-header img {
-			width: 100%;
-			z-index: -100;
-			position: relative;
-			left: 0;
-			top: 0;
-		}
-		.pull-up{
-			margin-top:-20px;
-		}
-
-	</style>
-	<meta http-equiv="Pragma" content="no-cache">
-	<meta http-equiv="Expires" content="-1">
+        .typed-cursor{
+            opacity: 1;
+            -webkit-animation: blink 0.7s infinite;
+            -moz-animation: blink 0.7s infinite;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-webkit-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        @-moz-keyframes blink{
+            0% { opacity:1; }
+            50% { opacity:0; }
+            100% { opacity:1; }
+        }
+        .header-typed{
+            width: 100%;
+            text-align: center;
+        }
+        .element{
+            padding-top: 10px;
+            display: inline-block;
+            font-size: 3em;
+        }
+    </style>
 </head>
 <body>
-	<div id="wrapper">
-		<div class="hidden-sm hidden-xs" id="img-header">
-			<img class="img-header"src="afbeeldingen/header.png"/>
-		</div>
 
-		<script language="JavaScript" type="text/javascript" src="js/header.js"></script>
-
-		<div id="content">
-
-			<div class="container">
-				<div class="featurette">
-					<a href="biblio.html"><img class="featurette-image hidden-xs hidden-sm img-circle pull-right blue" src="afbeeldingen/gilles.jpg"></a>
-					<a href="biblio.html"><img class="featurette-image hidden-md hidden-lg hidden-xs img-circle pull-right blue" width="250px" height="250px" src="afbeeldingen/gilles.jpg"></a>
-					<p><br /><br /></p>
-					<h1 class="featurette-heading">Gilles Callebaut. <span class="text-muted">Student Industrieel Ingenieur ICT.</span></h1>
-					<a href="biblio.html"><img class="featurette-image hidden-md hidden-lg hidden-sm img-circle pull-right blue" width="150px" height="150px" src="afbeeldingen/gilles.jpg"></a>
-					<p class="lead">Ik ben een student Industrieel Ingenieur - ELICT, <br />die <strong>zelf</strong> buiten zijn schooluren iets meer wil leren, <br />vandaar ook deze site!</p>
-					<small>Stephanie, mijn steun en toeverlaat.</small>
-				</div><!-- ./featurette -->
-			</div><!-- ./container -->
-
-			<div class="push"></div>
-
-			<div class="jumbotron">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-3 col-sm-4 col-xs-12">
-							<img class="featurette-image pull-left hidden-xs" height="300px" src="afbeeldingen/java-tut/java-logo.png">
-							<img class="featurette-image hidden-sm hidden-lg hidden-md text-center" height="150px" src="afbeeldingen/java-tut/java-logo.png">
-						</div>
-						<div class="col-md-9 col-sm-8 col-xs-12">
-							<h1>Maak kennis met Java!</h1>
-							<p>
-								Volg mijn korte, simpele tutorials voor het begrijpen en leren van de programmeertaal Java.
-								We beginnen met het installeren van het ontwerpplatform Eclipse en gaan zo over naar de meest courante data types en structuren.
-								Een groot voordeel van het programmeren in Java is dat het gratis is -en dus ook eclipse-.
-							</p>
-							<p><a class="btn btn-primary btn-lg" role="button" href="java-tutorials/java-tut.html">Bekijk de tutorials</a></p>
-						</div>
-					</div><!-- ./row -->
-				</div><!-- ./container -->
-			</div><!-- ./jumbotron -->
-
-			<div class="container">
-				<div class="push"></div>
-				<div class="row">
-					<div class="col-md-4 text-center">
-						<img class="img-circle" src="afbeeldingen/Shopping-list/icon_qr.png" width="140px">
-						<h2>Shopping list</h2>
-						<p>
-							Momenteel ook in volle ontwikkeling.<br><br>
-							Deze -Android- applicatie zal in staat zijn om producten te scannen via een QR-code of een gewone barcode om zo het product toe te voegen aan een shopping list.
-							<br>
-						</p>
-						<p><a class="btn btn-default" href="shopping-list.html">Lees meer »</a></p>
-					</div>
-					<div class="col-md-4 text-center">
-						<img class="img-circle" src="afbeeldingen/slavino-logo.png" width="140px">
-						<h2>Slavino - Mijn eerste Android applicatie</h2>
-						<p>Momenteel in volle ontwikkeling</p>
-						<p><a class="btn btn-default" style="cursor: not-allowed;">Lees meer »</a></p>
-					</div>
-					<div class="col-md-4 text-center">
-						<img src="afbeeldingen/java-tut/java-logo.png" height="140px">
-						<h2>Ontdek Java!</h2>
-						<p>
-							Java is een programmeertaal die niet meer weg te denken is uit deze wereld.
-							Als je voor de eerste keer een programmeertaal wilt leren dan is Java de juiste keuze. Het is een logische, maar toch veelvoudige taal.
-						</p>
-						<p><a class="btn btn-default" href="java-tutorials/java-tut.html">Lees meer »</a></p>
-					</div>
-				</div><!-- ./row -->
-			</div><!-- ./container -->
-
-		</div><!-- ./content -->
-
-		<a href="#" class="back-to-top hidden-sm hidden-xs">
-			<span class="glyphicon glyphicon-chevron-up pull-right top"></span>
-		</a>
-
-		<script src="js/footer.js"></script>
-
-	</div><!-- ./wrapper -->
-
-	<script src="js/bootstrap.js"></script>
+<nav class="navbar navbar-light bg-faded">
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+        &#9776;
+    </button>
+    <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+        <ul class="nav navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Projects</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <!-- Content here -->
+    <div class="header-typed">
+    <span class="element"></span>
+    </div>
+</div>
 
 
-	<script>
-		$(window).load(function() {
-			var offset = 120;
-			var duration = 500;
-			var scrollBottom = $(window).scrollTop() + $(window).height();
-
-			if ($(window).width() > 768) {
-				$('.navbar').removeClass('navbar-fixed-top');
-			}
-			var origOffsetY = $('.navbar').offset().top;
-
-			jQuery(window).scroll(function () {
-				/* button up*/
-
-				if (jQuery(this).scrollTop() <= origOffsetY || ($(window).scrollTop() + $(window).height() > $(document).height() - 225)) {
-					jQuery('.back-to-top').fadeOut(duration);
-				} else {
-					jQuery('.back-to-top').fadeIn(duration);
-				}
-
-				/* navbar */
-				if(origOffsetY!=0){
-					if ($(window).scrollTop() >= origOffsetY) {
-						$('#img-header').addClass('hidden');
-						$('.navbar').addClass('navbar-fixed-top'); 
-						origOffsetY=0;
-						jQuery('html, body').scrollTop(0);               
-					}
-
-					if (jQuery(this).scrollTop() = origOffsetY) {
-						jQuery('.back-to-top').fadeOut(duration);
-					}
-				}
-			});
-
-			jQuery('.back-to-top').click(function (event) {
-				event.preventDefault();
-				jQuery('html, body').animate({ scrollTop: 0 }, duration);
-				jQuery('.back-to-top').fadeOut(duration);
-				return false;
-			})
-			jQuery('.top').click(function (event) {
-				event.preventDefault();
-				jQuery('html, body').animate({ scrollTop: 0 }, duration);
-				jQuery('.back-to-top').fadeOut(duration);
-				return false;
-			})
-
-
-		});
+<!-- jQuery first, then Bootstrap JS. -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"
+        integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7"
+        crossorigin="anonymous"></script>
+<script src="typed.js"></script>
+<script>
+    $(function(){
+        $(".element").typed({
+            strings: ["I'm Gilles Callebaut", "I'm an Android enthusiast", "I'm a Software Engineer"],
+            typeSpeed: 0
+        });
+    });
 </script>
-
 </body>
 </html>
