@@ -38,7 +38,7 @@
                 padding-top: 3%;
             }
 
-        @media (min-width: 43em) {
+        @media (min-width: 48em) {
             .navbar .navbar-nav {
                 display: inline-block;
                 float: none;
@@ -62,7 +62,7 @@
     </style>
 </head>
 <body>
-<div class="banner"><img src="banner_projects.jpg" style="width:100%"></div>
+<div class="banner hidden-md-down"><img src="banner_projects.jpg" style="width:100%"></div>
 <nav class="navbar navbar-light bg-faded navbar-fixed-top">
     <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
         &#9776;
@@ -134,7 +134,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -146,13 +145,18 @@
         crossorigin="anonymous"></script>
         <script type="text/javascript">
         var h = $(".banner").height();
-        $(".container").css('margin-top', h);
-        $(".container").fadeIn("slow");
+        if(h>10) {
+            $(".container").css('margin-top', h);
+            $(".container").fadeIn("slow");
+        }
 
         $( window ).resize(function() {
             var h = $(".banner").height();
-            $(".container").css('margin-top', h);
-            $(".container").fadeIn("slow");
+            if(h>10) {
+                $(".container").css('margin-top', h);
+                $(".container").fadeIn("slow");
+            }
+
         });
         </script>
 </body>
