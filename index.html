@@ -20,16 +20,27 @@
         }
 
         html {
+            background: url(bg-s.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        
+        nav{
+            background-color: transparent !important;
+        }
+        @media (min-width: 768px) {
+
+			html {
             background: url(bg.jpg) no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
         }
-        nav{
-            background-color: transparent !important;
-        }
-        @media (min-width: 768px) {
+
             .navbar .navbar-nav {
                 display: inline-block;
                 float: none;
