@@ -13,9 +13,11 @@
 
     <title>Projects</title>
 
+
+
     <style>
         body {
-            background-color: transparent;
+            background-color: #d9d8c6;
         }
 
         html {
@@ -27,16 +29,16 @@
         }
 
         .banner{
-            z-index: -1;
-            position: absolute;
+            position: fixed;
             top:0;
             width:100%;
         }
 
-        @media (min-width: 62em) {
+        .container{
+                padding-top: 3%;
+            }
 
-           
-
+        @media (min-width: 43em) {
             .navbar .navbar-nav {
                 display: inline-block;
                 float: none;
@@ -60,8 +62,8 @@
     </style>
 </head>
 <body>
-<div class="banner"><img src="banner_projects.jpg" style="width:100%"></img></div>
-<nav class="navbar navbar-light bg-faded">
+<div class="banner"><img src="banner_projects.jpg" style="width:100%"></div>
+<nav class="navbar navbar-light bg-faded navbar-fixed-top">
     <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
         &#9776;
     </button>
@@ -82,8 +84,7 @@
         </ul>
     </div>
 </nav>
-
-<div class="container">
+<div class="container" style="display:none">
     <!-- Content here -->
     <div class="card-columns">
         <div class="card-wrapper">
@@ -146,6 +147,13 @@
         <script type="text/javascript">
         var h = $(".banner").height();
         $(".container").css('margin-top', h);
+        $(".container").fadeIn("slow");
+
+        $( window ).resize(function() {
+            var h = $(".banner").height();
+            $(".container").css('margin-top', h);
+            $(".container").fadeIn("slow");
+        });
         </script>
 </body>
 </html>
