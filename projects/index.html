@@ -19,27 +19,23 @@
         }
 
         html {
-            height: 100%;
-            background: url(../bg-s.jpg) no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        }
+                background-color: #d9d8c6;
+            }
 
         nav {
             background-color: transparent !important;
         }
 
+        .banner{
+            z-index: -1;
+            position: absolute;
+            top:0;
+            width:100%;
+        }
+
         @media (min-width: 62em) {
 
-            html {
-                background: url(../bg.jpg) no-repeat center center fixed;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-            }
+           
 
             .navbar .navbar-nav {
                 display: inline-block;
@@ -64,7 +60,7 @@
     </style>
 </head>
 <body>
-
+<div class="banner"><img src="banner_projects.jpg" style="width:100%"></img></div>
 <nav class="navbar navbar-light bg-faded">
     <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
         &#9776;
@@ -86,6 +82,7 @@
         </ul>
     </div>
 </nav>
+
 <div class="container">
     <!-- Content here -->
     <div class="card-columns">
@@ -146,5 +143,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"
         integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7"
         crossorigin="anonymous"></script>
+        <script type="text/javascript">
+        var h = $(".banner").height();
+        $(".container").css('margin-top', h);
+        </script>
 </body>
 </html>
