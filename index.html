@@ -199,7 +199,7 @@
 </nav>
 <div class="container">
     <!-- Content here -->
-    <div class="header-typed">
+    <div class="header-typed" style="display:none">
         <div class="head-wrap">
             <div class="text-editor-wrap">
                 <div class="title-bar"><span class="title">Elektronic and ICT Engineer &mdash; bash &mdash; 80x<span
@@ -219,9 +219,9 @@
         integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7"
         crossorigin="anonymous"></script>
 <script src="typed.js"></script>
+<script src="lscache.js"></script>
 <script>
-    $(function () {
-
+    function terminal(){
         $("#typed").typed({
             strings: ["I'm Gilles Callebaut", "I'm an Android enthusiast", "I'm a Software Engineer", "grep -ri \"Gilles Callebaut\""],
             typeSpeed: 30,
@@ -229,8 +229,7 @@
                 shift();
             }
         });
-
-    });
+    }
     function shift() {
         $(".head-wrap").addClass("shift-text");
         terminalHeight();
@@ -257,6 +256,19 @@
                 clearTimeout();
             }
         }, 100);
+    }
+</script>
+<script>
+    var key = 'noTerminal';
+    lscache.flushExpired();
+    var noTerminal = lscache.get(key);
+    alert(noTerminal);
+    if (noTerminal) {
+        $(".navbar").fadeIn("fast");
+    }else{
+        lscache.set(key, 'true', 60*60);
+        $(".header-typed").fadeIn("fast");
+        terminal();
     }
 </script>
 </body>
