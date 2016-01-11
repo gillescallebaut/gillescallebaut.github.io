@@ -278,8 +278,6 @@
                 //  self.stopNum = 0;
                 // }
 
-                self.stopNum = 3;
-
 
                 if (self.contentType === 'html') {
                     // skip over html tags while backspacing

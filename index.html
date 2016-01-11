@@ -170,7 +170,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-light bg-faded">
+<nav class="navbar navbar-light bg-faded" style="display:none">
     <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
         &#9776;
     </button>
@@ -227,7 +227,8 @@
   function shift(){
       $(".head-wrap").addClass("shift-text");
       terminalHeight();
-        $(".header-typed").fadeTo('slow', 100).slideUp(1000);
+        $(".header-typed").fadeTo('slow').slideUp(1000);
+        $( ".navbar").fadeIn("slow");
   }
 
   function terminalHeight(){
