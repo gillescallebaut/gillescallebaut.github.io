@@ -243,6 +243,7 @@
             });
         });
     });
+    $('.banner img').load(function(){
     if ($(".banner").is(":visible")) {
         var h = $(".banner").height();
         $(".container").css('margin-top', h);
@@ -251,6 +252,7 @@
         var nh = $(".navbar").height();
         $(".container").css('margin-top', nh);
     }
+});
 </script>
 </body>
 </html>
