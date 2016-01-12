@@ -211,27 +211,27 @@
         integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7"
         crossorigin="anonymous"></script>
 <script type="text/javascript">
-    if($(".banner").is(":visible")) {
-        var h = $(".banner").height();
-        $(".container").css('margin-top', h);
-        $(".container").fadeIn("slow");
-        $(".header").css("height",h);
-    }else{
-        $(".container").css('margin-top', '10px');
-    }
-
-    $(window).resize(function () {
-        if($(".banner").is(":visible")) {
-        var h = $(".banner").height();
+    $( document ).ready(function() {
+        if ($(".banner").is(":visible")) {
+            var h = $(".banner").height();
             $(".container").css('margin-top', h);
             $(".container").fadeIn("slow");
-            $(".header").css("height",h);
-        }else{
+            $(".header").css("height", h);
+        } else {
             $(".container").css('margin-top', '10px');
         }
+
+        $(window).resize(function () {
+            if ($(".banner").is(":visible")) {
+                var h = $(".banner").height();
+                $(".container").css('margin-top', h);
+                $(".container").fadeIn("slow");
+                $(".header").css("height", h);
+            } else {
+                $(".container").css('margin-top', '10px');
+            }
+        });
     });
-
-
 </script>
 </body>
 </html>
