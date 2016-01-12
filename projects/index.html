@@ -215,11 +215,12 @@
         if ($(".banner").is(":visible")) {
             var h = $(".banner").height();
             $(".container").css('margin-top', h);
-            $(".container").fadeIn("slow");
             $(".header").css("height", h);
         } else {
             $(".container").css('margin-top', '10px');
         }
+
+        $(".container").fadeIn("slow");
 
         $(window).resize(function () {
             if ($(".banner").is(":visible")) {
