@@ -10,33 +10,40 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
           integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 
-
     <title>Projects</title>
-
-
 
     <style>
         body {
+            width: 100%;
+            height: 100%;
             background-color: #d9d8c6;
         }
 
         html {
-                background-color: #d9d8c6;
-            }
+            background-color: #d9d8c6;
+        }
 
         nav {
             background-color: transparent !important;
+            z-index:11;
         }
 
-        .banner{
+        .banner {
             position: fixed;
-            top:0;
-            width:100%;
+            top: 0;
+            width: 100%;
+            z-index :10;
         }
 
-        .container{
-                padding-top: 3%;
-            }
+        .container {
+            padding-top: 3%;
+            overflow: auto;
+        }
+
+        .card > img {
+            display: block;
+            margin: auto;
+        }
 
         @media (min-width: 48em) {
             .navbar .navbar-nav {
@@ -54,7 +61,7 @@
                 margin-right: 100px;
             }
 
-            .container{
+            .container {
                 padding-top: 3%;
             }
 
@@ -63,7 +70,7 @@
 </head>
 <body>
 <div class="banner hidden-md-down"><img src="banner_projects.jpg" style="width:100%"></div>
-<nav class="navbar navbar-light bg-faded navbar-fixed-top">
+<nav class="navbar navbar-light bg-faded navbar navbar-fixed-top">
     <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
         &#9776;
     </button>
@@ -84,22 +91,26 @@
         </ul>
     </div>
 </nav>
+
 <div class="container" style="display:none">
-    <!-- Content here -->
     <div class="card-columns">
+        <!-- MASTER THESIS -->
         <div class="card-wrapper">
             <div class="card">
                 <div class="card-block">
-                    <h4 class="card-title">Master thesis</h4>
-                    <h6 class="card-subtitle text-muted">Analysis of data storage by using cross-platform tools on mobile
+                    <h4 class="card-title">Master Thesis</h4>
+                    <h6 class="card-subtitle text-muted">Analysis of data storage by using cross-platform tools on
+                        mobile
                         devices</h6>
                 </div>
-                <img src="cordova.png"  width="100%" max-width="100%" alt="Card image">
+                <img src="cordova.png" width="100%" max-width="100%" alt="Card image">
 
                 <div class="card-block">
                     <p class="card-text">Cross-platform tools are being used to increase the efficiency during
-                        application development while decreasing the incremental cost. Many security critical applications
-                        are being build with cross platform tools. This in-depth analysis of storage options through CPTs
+                        application development while decreasing the incremental cost. Many security critical
+                        applications
+                        are being build with cross platform tools. This in-depth analysis of storage options through
+                        CPTs
                         and their corresponding security concerns will give developers a better understanding of the
                         implications concerning developing with CPTs --in the terms of secure data storage.</p>
                     <!-- <a href="#" class="card-link">Card link</a>
@@ -107,17 +118,18 @@
                 </div>
                 <div class="card-block">
                     <h6><span class="label label-pill label-default">Android</span>
-                    <span class="label label-pill label-default">iOS</span>
-                    <span class="label label-pill label-default">Cordova/PhoneGap</span></h6>
+                        <span class="label label-pill label-default">iOS</span>
+                        <span class="label label-pill label-default">Cordova/PhoneGap</span></h6>
                 </div>
             </div>
         </div>
 
 
+        <!-- BACHELOR THESIS -->
         <div class="card-wrapper">
             <div class="card">
                 <div class="card-block">
-                    <h4 class="card-title">Bachelor thesis</h4>
+                    <h4 class="card-title">Bachelor Thesis</h4>
                     <h6 class="card-subtitle text-muted">Android Application</h6>
                 </div>
                 <img src="bachelor.png" width="100%" max-width="100%" alt="Card image">
@@ -134,8 +146,63 @@
                 </div>
             </div>
         </div>
+
+        <!-- Distributed Systems -->
+        <div class="card-wrapper">
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title">Multiplayer Minesweeper Game</h4>
+                    <h6 class="card-subtitle text-muted">Distributed system</h6>
+                </div>
+                <img src="Minesweeper_Icon.png" width="25%" max-width="50%" min-width="20px" alt="Card image">
+
+                <div class="card-block">
+                    <p class="card-text">The games were spread across
+                        different servers for the purpose of load balancing. RMI was used for communication between
+                        client and server, servers themself, and server and dispatcher. If a server were to crash, the
+                        games would migrate --in the background-- to another online server. Adding new servers
+                        at-runtime was also implemented. An idle or overloaded server can be detected. The latter will
+                        result in no longer receiving new players, the first will result in closing the server.</p>
+                    <!-- <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>-->
+                </div>
+                <div class="card-block">
+                    <h6><span class="label label-pill label-default">RMI</span>
+                        <span class="label label-pill label-default">Java FX</span>
+                    </h6>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Distributed Systems -->
+        <div class="card-wrapper">
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title">Football assignment Problem</h4>
+                    <h6 class="card-subtitle text-muted">Operational Research</h6>
+                </div>
+                <img src="football.png" width="25%" max-width="50%" min-width="20px" alt="Card image">
+
+                <div class="card-block">
+                    <p class="card-text"> Optimization problem for KBVB (Koninklijke Belgische voetbalbond).
+                        Our metaheuristic approach will assign football teams to leagues to minimize the distance
+                        between teams in the same league, thus resulting in a reduction of travel time and money.</p>
+                    <!-- <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>-->
+                </div>
+                <div class="card-block">
+                    <h6><span class="label label-pill label-default">Simulated Annealing</span>
+                        <span class="label label-pill label-default">Optimalization</span>
+                    </h6>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </div>
+
 
 
 <!-- jQuery first, then Bootstrap JS. -->
@@ -143,21 +210,28 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"
         integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7"
         crossorigin="anonymous"></script>
-        <script type="text/javascript">
+<script type="text/javascript">
+    if($(".banner").is(":visible")) {
         var h = $(".banner").height();
-        if(h>10) {
+        $(".container").css('margin-top', h);
+        $(".container").fadeIn("slow");
+        $(".header").css("height",h);
+    }else{
+        $(".container").css('margin-top', '10px');
+    }
+
+    $(window).resize(function () {
+        if($(".banner").is(":visible")) {
+        var h = $(".banner").height();
             $(".container").css('margin-top', h);
             $(".container").fadeIn("slow");
+            $(".header").css("height",h);
+        }else{
+            $(".container").css('margin-top', '10px');
         }
+    });
 
-        $( window ).resize(function() {
-            var h = $(".banner").height();
-            if(h>10) {
-                $(".container").css('margin-top', h);
-                $(".container").fadeIn("slow");
-            }
 
-        });
-        </script>
+</script>
 </body>
 </html>
