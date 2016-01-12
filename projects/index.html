@@ -33,6 +33,12 @@
             top: 0;
             width: 100%;
             z-index :10;
+
+            margin-bottom: -5px;
+
+            -webkit-box-shadow: 0px 0px 30px 0px rgba(50, 50, 50, 0.49);
+            -moz-box-shadow:    0px 0px 30px 0px rgba(50, 50, 50, 0.49);
+            box-shadow:         0px 0px 30px 0px rgba(50, 50, 50, 0.49);
         }
 
         .container {
@@ -69,7 +75,7 @@
     </style>
 </head>
 <body>
-<div class="banner hidden-md-down"><img src="banner_projects.jpg" style="width:100%"></div>
+<div class="banner hidden-md-down"><img src="banner_projects.png" style="width:100%"></div>
 <nav class="navbar navbar-light bg-faded navbar navbar-fixed-top">
     <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
         &#9776;
@@ -211,28 +217,30 @@
         integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7"
         crossorigin="anonymous"></script>
 <script type="text/javascript">
-    $( document ).ready(function() {
-        if ($(".banner").is(":visible")) {
-            var h = $(".banner").height();
-            $(".container").css('margin-top', h);
-            $(".header").css("height", h);
-        } else {
-            var nh = $(".navbar").height();
-                $(".container").css('margin-top', nh);
-        }
-
-        $(".container").fadeIn("slow");
-
-        $(window).resize(function () {
+    $(window).ready(function() {
+        $(document).ready(function () {
             if ($(".banner").is(":visible")) {
                 var h = $(".banner").height();
                 $(".container").css('margin-top', h);
-                $(".container").fadeIn("slow");
                 $(".header").css("height", h);
             } else {
                 var nh = $(".navbar").height();
                 $(".container").css('margin-top', nh);
             }
+
+            $(".container").fadeIn("slow");
+
+            $(window).resize(function () {
+                if ($(".banner").is(":visible")) {
+                    var h = $(".banner").height();
+                    $(".container").css('margin-top', h);
+                    $(".container").fadeIn("slow");
+                    $(".header").css("height", h);
+                } else {
+                    var nh = $(".navbar").height();
+                    $(".container").css('margin-top', nh);
+                }
+            });
         });
     });
 </script>
