@@ -222,7 +222,6 @@
             if ($(".banner").is(":visible")) {
                 var h = $(".banner").height();
                 $(".container").css('margin-top', h);
-                $(".header").css("height", h);
             } else {
                 var nh = $(".navbar").height();
                 $(".container").css('margin-top', nh);
@@ -235,7 +234,6 @@
                     var h = $(".banner").height();
                     $(".container").css('margin-top', h);
                     $(".container").fadeIn("slow");
-                    $(".header").css("height", h);
                 } else {
                     var nh = $(".navbar").height();
                     $(".container").css('margin-top', nh);
@@ -243,6 +241,13 @@
             });
         });
     });
+    if ($(".banner").is(":visible")) {
+        var h = $(".banner").height();
+        $(".container").css('margin-top', h);
+    } else {
+        var nh = $(".navbar").height();
+        $(".container").css('margin-top', nh);
+    }
 </script>
 </body>
 </html>
