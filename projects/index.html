@@ -222,6 +222,7 @@
             if ($(".banner").is(":visible")) {
                 var h = $(".banner").height();
                 $(".container").css('margin-top', h);
+                console.log(h);
             } else {
                 var nh = $(".navbar").height();
                 $(".container").css('margin-top', nh);
@@ -234,6 +235,7 @@
                     var h = $(".banner").height();
                     $(".container").css('margin-top', h);
                     $(".container").fadeIn("slow");
+                    console.log(h);
                 } else {
                     var nh = $(".navbar").height();
                     $(".container").css('margin-top', nh);
@@ -244,6 +246,7 @@
     if ($(".banner").is(":visible")) {
         var h = $(".banner").height();
         $(".container").css('margin-top', h);
+        console.log(h);
     } else {
         var nh = $(".navbar").height();
         $(".container").css('margin-top', nh);
