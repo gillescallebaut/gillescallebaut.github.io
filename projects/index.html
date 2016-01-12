@@ -217,7 +217,8 @@
             $(".container").css('margin-top', h);
             $(".header").css("height", h);
         } else {
-            $(".container").css('margin-top', '10px');
+            var nh = $(".navbar").height();
+                $(".container").css('margin-top', nh);
         }
 
         $(".container").fadeIn("slow");
