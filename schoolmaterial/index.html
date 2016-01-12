@@ -2,591 +2,808 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="shortcut icon" href="favicon.ico">
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
           integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     <meta property="og:title"
-content="Samenvattingen Ind. Ing. KU-Leuven @ Odisee" />
-<meta property="og:image"
-content="http://chocolatecode.site90.com/afbeeldingen/banner-code.jpg" />
+          content="Samenvattingen Ind. Ing. KU-Leuven @ Odisee"/>
+    <meta property="og:image"
+          content="banner-logo.jpg"/>
     <title>Samenvattingen</title>
     <style type="text/css">
-    .samenvatting-container{
-        background-color: white;
-        padding:25px;
-        border-radius: 5px;
-    }
-    .push{
-        margin-bottom: 5%;
-    }
-   
-    /*
-    body{
-        background-color: #d9d8c6;
-    }
-    */
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+        }
+
+        nav {
+            background-color: transparent !important;
+            z-index: 11;
+        }
+
+        .samenvatting-container{
+            background-color: white;
+            padding:25px;
+            border-radius: 5px;
+        }
+
+
+        .banner {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+
+            margin-bottom: -5px;
+
+            -webkit-box-shadow: 0px 0px 30px 0px rgba(50, 50, 50, 0.49);
+            -moz-box-shadow: 0px 0px 30px 0px rgba(50, 50, 50, 0.49);
+            box-shadow: 0px 0px 30px 0px rgba(50, 50, 50, 0.49);
+        }
+
+        @media (min-width: 48em) {
+            .navbar .navbar-nav {
+                display: inline-block;
+                float: none;
+                vertical-align: top;
+            }
+
+            .navbar .collapse {
+                text-align: center;
+            }
+
+            .navbar-nav > li {
+                margin-left: 100px;
+                margin-right: 100px;
+            }
+
+        }
+
+
     </style>
 </head>
 <body>
-    <div class="container">
-    <div class="push"></div>
-        <div id="content">
+<div class="banner hidden-md-down"><img src="banner-1.jpg" style="width:100%"></div>
+<nav class="navbar navbar-light bg-faded navbar navbar-fixed-top">
+    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+        &#9776;
+    </button>
+    <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+        <ul class="nav navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Projects</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/schoolmaterial">School</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container content-wrapper">
+    <div id="content">
 
-            <div class="container">
-                <div class="alert alert-danger" role="alert">
-                    Als de samenvattingen u geholpen hebben dan mag je me altijd eens trakteren op een frisse pint!<br />
-                    Ook zou ik het fijn vinden om mijn samenvattingen niet te verspreiden, maar verwijs de personen in kwestie dan gewoon door naar deze site.
-                </div>
-
-
-
-<table class="table">
-  <tr>
-  	<td><img class="img-responsive" style="max-width:100px;" src="afbeeldingen/fb_group.jpg"/></td>
-  	<td><a href="https://www.facebook.com/groups/BA1.Industriele.Ingenieurswetenschappen/">Eerste jaar Bachelor Industrieel Ingenieur KULeuven@Gent (Odysee)</a></td>
-  	<td><a href="https://www.facebook.com/groups/139074206299641/">Tweede jaar Bachelor Industrieel Ingenieur KULeuven@Gent (Odysee)</a></td>
-  </tr>
-  <tr>
-  <td><img class="img-responsive" style="max-width:60px;" src="afbeeldingen/dropbox.png"/></td>
-  	<td><a href="https://www.dropbox.com/sh/j5w8t020yo136ge/AACEhk4r0qbLJ6LiAVDW8Akxa?dl=0&s=sl">Eerste jaar (Dropbox)</a></td>
-  	<td><a href="https://www.dropbox.com/sh/hzqb6obs99p197w/AAAgl_uzvx_-mbu6gC5-JKIDa?dl=0">Tweede jaar (Dropbox)</a></td>
-  </tr>
-</table>
-
-                <!---------------------------------------------------------------- EERSTE JAAR ---------------------------------------------------------------------------------->
-                <div class="jumbotron">
-                    <div class="container">
-                        <h2 class="text-center" data-toggle="collapse" data-target="#collapseEerste" style="cursor:pointer">Eerste jaar Industrieel Ingenieur <br><small>2012-2013</small></h2>
-                        <div id="collapseEerste" class="collapse">
-                            <div class="mini-push"></div>
-                            
-                            <h3>Eerste Semester</h3>
-                            <hr class="divider" />
+        <div class="container">
+            <div class="alert alert-danger" role="alert">
+                Als de samenvattingen u geholpen hebben dan mag je me altijd eens trakteren op een frisse pint!<br/>
+                Ook zou ik het fijn vinden om mijn samenvattingen niet te verspreiden, maar verwijs de personen in
+                kwestie dan gewoon door naar deze site.
+            </div>
 
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Algebra</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
+            <table class="table">
+                <tr>
+                    <td><img class="img-fluid" style="max-width:100px;" src="afbeeldingen/fb_group.jpg"/></td>
+                    <td><a href="https://www.facebook.com/groups/BA1.Industriele.Ingenieurswetenschappen/">Eerste jaar
+                        Bachelor Industrieel Ingenieur KULeuven@Gent (Odysee)</a></td>
+                    <td><a href="https://www.facebook.com/groups/139074206299641/">Tweede jaar Bachelor Industrieel
+                        Ingenieur KULeuven@Gent (Odysee)</a></td>
+                </tr>
+                <tr>
+                    <td><img class="img-fluid" style="max-width:60px;" src="afbeeldingen/dropbox.png"/></td>
+                    <td><a href="https://www.dropbox.com/sh/j5w8t020yo136ge/AACEhk4r0qbLJ6LiAVDW8Akxa?dl=0&s=sl">Eerste
+                        jaar (Dropbox)</a></td>
+                    <td><a href="https://www.dropbox.com/sh/hzqb6obs99p197w/AAAgl_uzvx_-mbu6gC5-JKIDa?dl=0">Tweede jaar
+                        (Dropbox)</a></td>
+                </tr>
+            </table>
+
+            <!---------------------------------------------------------------- EERSTE JAAR ---------------------------------------------------------------------------------->
+            <div class="jumbotron">
+                <div class="container">
+                    <h2 class="text-center" data-toggle="collapse" data-target="#collapseEerste" style="cursor:pointer">
+                        Eerste jaar Industrieel Ingenieur <br>
+                        <small>2012-2013</small>
+                    </h2>
+                    <div id="collapseEerste" class="collapse">
+                        <div class="mini-push"></div>
+
+                        <h3>Eerste Semester</h3>
+                        <hr class="divider"/>
+
+
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Algebra</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
                                             <a href="samenvattingen/2012_2013/algebra_public.pdf">
                                                 Deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze samenvatting
                                         </span>
-                                        bevat Complexe getallen deel I en matrices deel I. (9 pagina's)
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/2012_2013/algebra_public.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    bevat Complexe getallen deel I en matrices deel I. (9 pagina's)
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/2012_2013/algebra_public.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png"/></a>
 
-                            <hr class="divider" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Fysica</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
+                        <hr class="divider"/>
+
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Fysica</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
                                             <a href="samenvattingen/2012_2013/fysica_H2_tem_H8_public.pdf">
                                                 Deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze samenvatting
                                         </span>
-                                        bevat H2 t.e.m. H8. (33 pagina's)
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/2012_2013/fysica_H2_tem_H8_public.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    bevat H2 t.e.m. H8. (33 pagina's)
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/2012_2013/fysica_H2_tem_H8_public.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png"/></a>
 
-                            <hr class="divider" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Programmeren SPOJ</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
+                        <hr class="divider"/>
+
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Programmeren SPOJ</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
                                             <a href="samenvattingen/2012_2013/programmeren_spoj.pdf">
                                                 Deze oplossingen
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze oplossingen
                                         </span>
-                                        zijn de uitwerkingen van de SPOJ oefeningen gegeven op 2012-2013, gelieve hiermee rekening te houden. Mijn code-skills waren toen ook nog niet wat ze nu zijn. (14 pagina's)
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/2012_2013/programmeren_spoj.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    zijn de uitwerkingen van de SPOJ oefeningen gegeven op 2012-2013, gelieve hiermee
+                                    rekening te houden. Mijn code-skills waren toen ook nog niet wat ze nu zijn. (14
+                                    pagina's)
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/2012_2013/programmeren_spoj.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png"/></a>
 
-                            <hr class="divider" />
-                            <h3>Tweede Semester</h3>
-                            <hr class="divider" />
-                            
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Fysica 2</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
+                        <hr class="divider"/>
+                        <h3>Tweede Semester</h3>
+                        <hr class="divider"/>
+
+
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Fysica 2</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
                                             <a href="samenvattingen/2012_2013/fysica2_H6-14-15-16-19-31-32-33.pdf">
                                                 Deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze samenvatting
                                         </span>
-                                        bevat H6, 14 t.e.m. H16, H19 en H31 tem 33. (58 pagina's)
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/2012_2013/fysica2_H6-14-15-16-19-31-32-33.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    bevat H6, 14 t.e.m. H16, H19 en H31 tem 33. (58 pagina's)
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/2012_2013/fysica2_H6-14-15-16-19-31-32-33.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png"/></a>
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Netwerk- en Objectoriëntatie</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
+
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Netwerk- en Objectoriëntatie</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
                                             <a href="samenvattingen/2012_2013/netwerk_en_objecten_H1_tem_H3.pdf">
                                                 Deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze samenvatting
                                         </span>
-                                        bevat H1 t.e.m. H3. (26 pagina's)
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/2012_2013/netwerk_en_objecten_H1_tem_H3.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    bevat H1 t.e.m. H3. (26 pagina's)
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/2012_2013/netwerk_en_objecten_H1_tem_H3.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png"/></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
 
 
+                    </div>
+                    <!-- /.collapse -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /.jumbotron -->
 
-                        </div><!-- /.collapse -->
-                    </div><!-- /.container -->
-                </div><!-- /.jumbotron -->
+            <!---------------------------------------------------------------- TWEEDE JAAR ---------------------------------------------------------------------------------->
+            <div class="jumbotron">
+                <div class="container">
+                    <h2 class="text-center" data-toggle="collapse" data-target="#collapseTweede" style="cursor:pointer">
+                        Tweede jaar Industrieel Ingenieur
+                        <large>ELICT</large>
+                        <br>
+                        <small>2013-2014</small>
+                    </h2>
+                    <div id="collapseTweede" class="collapse">
+                        <div class="mini-push"></div>
 
-                <!---------------------------------------------------------------- TWEEDE JAAR ---------------------------------------------------------------------------------->
-                <div class="jumbotron">
-                    <div class="container">
-                        <h2 class="text-center" data-toggle="collapse" data-target="#collapseTweede" style="cursor:pointer">Tweede jaar Industrieel Ingenieur <large>ELICT</large><br><small>2013-2014</small></h2>
-                        <div id="collapseTweede" class="collapse">
-                            <div class="mini-push"></div>
-                            
-                            <h3>Derde Semester</h3>
-                            <hr class="divider" />
+                        <h3>Derde Semester</h3>
+                        <hr class="divider"/>
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Chemie 3</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Chemie 3</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
                                             <a href="samenvattingen/2013_2014/chemie_3_public.pdf">
                                                 Deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze samenvatting
                                         </span>
-                                        bevat een samenvatting van H2 t.e.m. H12 van de cursus. (55 pagina's) 
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/2013_2014/chemie_3_public.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    bevat een samenvatting van H2 t.e.m. H12 van de cursus. (55 pagina's)
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/2013_2014/chemie_3_public.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png"/></a>
 
-                            <hr class="divider" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Elektronica</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
+                        <hr class="divider"/>
+
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Elektronica</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
                                             <a href="samenvattingen/2013_2014/elektronica_gilles_callebaut_public.pdf">
                                                 Deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze samenvatting
                                         </span>
-                                        bevat een samenvatting van H1 t.e.m. H4 van de cursus. (52 pagina's) 
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/2013_2014/elektronica_gilles_callebaut_public.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    bevat een samenvatting van H1 t.e.m. H4 van de cursus. (52 pagina's)
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/2013_2014/elektronica_gilles_callebaut_public.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png"/></a>
 
-                            <hr class="divider" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Fluïdomechanica</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
+                        <hr class="divider"/>
+
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Fluïdomechanica</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
                                             <a href="samenvattingen/2013_2014/fluido_public.pdf">
                                                 Deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze samenvatting
                                         </span>
-                                        bevat een samenvatting van H1 t.e.m. H4 van de cursus. (43 pagina's) 
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/2013_2014/fluido_public.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    bevat een samenvatting van H1 t.e.m. H4 van de cursus. (43 pagina's)
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/2013_2014/fluido_public.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png"/></a>
 
-                            <hr class="divider" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Thermodynamica</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
+                        <hr class="divider"/>
+
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Thermodynamica</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
                                             <a href="samenvattingen/2013_2014/thermo_public.pdf">
                                                 Deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze samenvatting
                                         </span>
-                                        bevat een samenvatting van H3 t.e.m. H9 van de cursus. (63 pagina's) 
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/2013_2014/thermo_public.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    bevat een samenvatting van H3 t.e.m. H9 van de cursus. (63 pagina's)
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/2013_2014/thermo_public.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png"/></a>
 
-                            <hr class="divider" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Wijsbegeerte</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
+                        <hr class="divider"/>
+
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Wijsbegeerte</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
                                             <a href="https://prezi.com/gnjrwautfsfy/wijsbegeerte/">
                                                 Deze prezi
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze prezi
                                         </span>
-                                        is een visuele samenvatting van het eerste gedeelte van de cursus. Door tijdsnood is dit niet afgewerkt. Het geeft wel de samenhang weer tussen de verschillende onderdelen van de cursus.
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="https://prezi.com/gnjrwautfsfy/wijsbegeerte/"><img class="hidden-sm hidden-xs center-block img-responsive v-center" src="http://cumulustrust.com/media/icons/CT_ICON_PREZI_1.png" /></a>
-
-                                    </div>
+                                    is een visuele samenvatting van het eerste gedeelte van de cursus. Door tijdsnood is
+                                    dit niet afgewerkt. Het geeft wel de samenhang weer tussen de verschillende
+                                    onderdelen van de cursus.
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="https://prezi.com/gnjrwautfsfy/wijsbegeerte/"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            src="http://cumulustrust.com/media/icons/CT_ICON_PREZI_1.png"/></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
 
 
-                            <hr class="divider" />
-                            <h3>Vierde Semester (2 ELICT)</h3>
-                            <hr class="divider" />
+                        <hr class="divider"/>
+                        <h3>Vierde Semester (2 ELICT)</h3>
+                        <hr class="divider"/>
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Analoge Elektronica</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Analoge Elektronica</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
                                             <a href="samenvattingen/2013_2014/analoge_elektronica_deel_1_en_2_public.pdf">
                                                 Deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze samenvatting
                                         </span>
-                                        bevat het eerste en tweede deel van de cursus. (37 pagina's)
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/2013_2014/analoge_elektronica_deel_1_en_2_public.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    bevat het eerste en tweede deel van de cursus. (37 pagina's)
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/2013_2014/analoge_elektronica_deel_1_en_2_public.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            src="afbeeldingen/pdf_icon.png"/></a>
 
-                            <hr class="divider" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Analoge Elektronica</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
+                        <hr class="divider"/>
+
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Analoge Elektronica</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
                                             <a href="samenvattingen/2013_2014/digitale_elektronica_public.pdf">
                                                 Deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze samenvatting
                                         </span>
-                                        is eigenlijk niet meer dan bundeling van de cursus en notities uit de les. (35 pagina's)
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/2013_2014/digitale_elektronica_public"><img class="hidden-sm hidden-xs center-block img-responsive v-center" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    is eigenlijk niet meer dan bundeling van de cursus en notities uit de les. (35
+                                    pagina's)
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/2013_2014/digitale_elektronica_public"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            src="afbeeldingen/pdf_icon.png"/></a>
 
-                            
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
 
-                            <hr class="divider" />
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Inleiding Tot Computernetwerken</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        Bij 
-                                        <span class="hidden-md hidden-lg">
+                        <hr class="divider"/>
+
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Inleiding Tot Computernetwerken</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                    Bij
+                                        <span class="hidden-md-up">
                                             <a href="samenvattingen/2013_2014/inleiding_tot_computernetwerken_public.pdf">
                                                 deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             deze samenvatting
                                         </span>
-                                        is er van uitgegaan van mogelijke examenvragen, deze werden dan opgelost onder de vorm van een samenvatting. (23 pagina's)
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/2013_2014/inleiding_tot_computernetwerken_public.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    is er van uitgegaan van mogelijke examenvragen, deze werden dan opgelost onder de
+                                    vorm van een samenvatting. (23 pagina's)
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/2013_2014/inleiding_tot_computernetwerken_public.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            src="afbeeldingen/pdf_icon.png"/></a>
 
-                            <hr class="divider" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Databanken</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
+                        <hr class="divider"/>
+
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Databanken</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
                                             <a href="samenvattingen/2013_2014/databanken_public.pdf">
                                                 Deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze samenvatting
                                         </span>
-                                        is eigenlijk niet meer dan bundeling van de cursus en notities uit de les. (54 pagina's)
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/2013_2014/databanken_public.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    is eigenlijk niet meer dan bundeling van de cursus en notities uit de les. (54
+                                    pagina's)
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/2013_2014/databanken_public.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            src="afbeeldingen/pdf_icon.png"/></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
 
 
-                            <hr class="divider" />
+                        <hr class="divider"/>
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Programmeren</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Programmeren</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
                                             <a href="samenvattingen/2013_2014/programmeren_public.pdf">
                                                 Deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze samenvatting
                                         </span>
-                                        bevat de leerstof die gegeven werd in 2013-2014. (27 pagina's)
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/2013_2014/programmeren_public.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    bevat de leerstof die gegeven werd in 2013-2014. (27 pagina's)
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/2013_2014/programmeren_public.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            src="afbeeldingen/pdf_icon.png"/></a>
 
-                            <hr class="divider" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
 
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Systeemtheorie</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
+                        <hr class="divider"/>
+
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Systeemtheorie</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
                                             <a href="samenvattingen/2013_2014/systeemtheorie_public.pdf">
                                                 Deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze samenvatting
                                         </span>
-                                        bevat de delen LTD en LTO en is gebaseerd op de lessen. (100 pagina's)
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/2013_2014/systeemtheorie_public.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    bevat de delen LTD en LTO en is gebaseerd op de lessen. (100 pagina's)
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/2013_2014/systeemtheorie_public.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            src="afbeeldingen/pdf_icon.png"/></a>
 
-                            
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
 
-                        </div><!-- /.collapse -->
-                    </div><!-- /.container -->
-                </div><!-- /.jumbotron -->
 
-                <!---------------------------------------------------------------- DERDE JAAR ---------------------------------------------------------------------------------->
-                <div class="jumbotron">
-                    <div class="container">
-                        <h2 class="text-center" data-toggle="collapse" data-target="#collapseDerde" style="cursor:pointer">Derde jaar Industrieel Ingenieur <large>(EL)ICT</large><br><small>2014-2015</small></h2>
-                        <div id="collapseDerde" class="collapse">
-                            <div class="mini-push"></div>
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Economie</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
-                                            <a href="pdf/economie_gillescallebaut.pdf">
+                    </div>
+                    <!-- /.collapse -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /.jumbotron -->
+
+            <!---------------------------------------------------------------- DERDE JAAR ---------------------------------------------------------------------------------->
+            <div class="jumbotron">
+                <div class="container">
+                    <h2 class="text-center" data-toggle="collapse" data-target="#collapseDerde" style="cursor:pointer">
+                        Derde jaar Industrieel Ingenieur
+                        <large>ELICTI</large>
+                        <br>
+                        <small>2014-2015</small>
+                    </h2>
+                    <div id="collapseDerde" class="collapse">
+                        <div class="mini-push"></div>
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Besturingssystemen 1</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
+                                            <a href="samenvattingen/besturingssystemen1.pdf">
                                                 Deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze samenvatting
                                         </span>
-                                        is gebaseerd op de cursus, <br /><strong>ECONOMIE EN COMMUNICATIE</strong>: Economie
-                                        van <cite><em>S. De Jaeger en N. Rogge</em></cite>.
-                                        <br /><br />
-                                        Deze samenvatting is een goede vervanging van de cursus
-                                        omdat ik de structuur en inhoud van de PowerPointslides als leidraad gebruik -samen met eigen nota's en extra informatie vanuit de cursus-.
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/economie_gillescallebaut.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    is gebaseerd op de lessen van Naessens Vincent, alsook op het boek, Operating Systems: Internals and Design Principles.
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/besturingssystemen1.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png"/></a>
 
-                            <hr class="divider" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
+
+                        <hr class="divider"/>
 
 
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Besturingssystemen 1</h2>
 
-                        </div><!-- /.collapse -->
-                    </div><!-- /.container -->
-                </div><!-- /.jumbotron -->
-
-                <!---------------------------------------------------------------- VIERDE JAAR ---------------------------------------------------------------------------------->
-                <div class="jumbotron">
-                    <div class="container">
-                        <h2 class="text-center" data-toggle="collapse" data-target="#collapseVierde" style="cursor:pointer">Masterjaar Industrieel Ingenieur <large>(EL)ICT</large><br><small>2015-2016</small></h2>
-                        <div id="collapseVierde" class="collapse">
-                            <div class="mini-push"></div>
-                            <div class="row-fluid samenvatting-container">
-                                <div class="container-fluid">
-                                    <h2>Economie</h2>
-                                    <div class="col-lg-8">
-                                        <br />
-                                        <span class="hidden-md hidden-lg">
-                                            <a href="pdf/economie_gillescallebaut.pdf">
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
+                                            <a href="samenvattingen/besturingssystemen1.pdf">
                                                 Deze samenvatting
                                             </a>
                                         </span>
-                                        <span class="hidden-sm hidden-xs">
+                                        <span class="hidden-sm-down">
                                             Deze samenvatting
                                         </span>
-                                        is gebaseerd op de cursus, <br /><strong>ECONOMIE EN COMMUNICATIE</strong>: Economie
-                                        van <cite><em>S. De Jaeger en N. Rogge</em></cite>.
-                                        <br /><br />
-                                        Deze samenvatting is een goede vervanging van de cursus
-                                        omdat ik de structuur en inhoud van de PowerPointslides als leidraad gebruik -samen met eigen nota's en extra informatie vanuit de cursus-.
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-md-1">
-                                        <a href="samenvattingen/economie_gillescallebaut.pdf"><img class="hidden-sm hidden-xs center-block img-responsive v-center" style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png" /></a>
-
-                                    </div>
+                                    is gebaseerd op de lessen van Naessens Vincent, alsook op het boek, Operating Systems: Internals and Design Principles.
                                 </div>
-                            </div><!-- ./row -->
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/besturingssystemen1.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png"/></a>
 
-                            <hr class="divider" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
+
+                        <hr class="divider"/>
+
+                    </div>
+                    <!-- /.collapse -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /.jumbotron -->
+
+            <!---------------------------------------------------------------- VIERDE JAAR ---------------------------------------------------------------------------------->
+            <div class="jumbotron">
+                <div class="container">
+                    <h2 class="text-center" data-toggle="collapse" data-target="#collapseVierde" style="cursor:pointer">
+                        Masterjaar Industrieel Ingenieur
+                        <large>ELICTI</large>
+                        <br>
+                        <small>2015-2016</small>
+                    </h2>
+                    <div id="collapseVierde" class="collapse">
+                        <div class="mini-push"></div>
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Digitale Signaalverwerking</h2>
+
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
+                                            <a href="samenvattingen/digitale_signaalverwerking.pdf">
+                                                Deze cursus
+                                            </a>
+                                        </span>
+                                        <span class="hidden-sm-down">
+                                            Deze cursus
+                                        </span>
+                                    is een herwerking van de cursus van Mevrouw C. Neassens. (131 pagina's)
+                                </div>
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/digitale_signaalverwerking.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png"/></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
+
+                        <hr class="divider"/>
 
 
+                        <div class="row-fluid samenvatting-container">
+                            <div class="container-fluid">
+                                <h2>Gedistribueerde Systemen</h2>
 
-                        </div><!-- /.collapse -->
-                    </div><!-- /.container -->
-                </div><!-- /.jumbotron -->
+                                <div class="col-lg-8">
+                                    <br/>
+                                        <span class="hidden-md-up">
+                                            <a href="samenvattingen/gedistribueerde_systemen.pdf">
+                                                Deze cursus
+                                            </a>
+                                        </span>
+                                        <span class="hidden-sm-down">
+                                            Deze cursus
+                                        </span>
+                                    is een combinatie van nota's genoteerd in de lessen van Meneer V. Neassens en het boek "Distributed Systems and Paradigms". (121 pagina's)
+                                </div>
+                                <div class="col-lg-3"></div>
+                                <div class="col-md-1">
+                                    <a href="samenvattingen/gedistribueerde_systemen.pdf"><img
+                                            class="hidden-sm-down center-block img-fluid v-center"
+                                            style="padding-top: 35px;" src="afbeeldingen/pdf_icon.png"/></a>
 
-            </div><!-- /.conatiner -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./row -->
+
+                        <hr class="divider"/>
 
 
+                    </div>
+                    <!-- /.collapse -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /.jumbotron -->
+
+        </div>
+        <!-- /.conatiner -->
 
 
-        </div><!-- ./content -->
-    </div><!-- ./wrapper -->
+    </div>
+    <!-- ./content -->
+</div>
+<!-- ./wrapper -->
 
-    <!-- jQuery first, then Bootstrap JS. -->
+<!-- jQuery first, then Bootstrap JS. -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"
         integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7"
         crossorigin="anonymous"></script>
+<script src="../banner.js"></script>
 </body>
 </html>
