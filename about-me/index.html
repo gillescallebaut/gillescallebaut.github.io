@@ -157,6 +157,16 @@
         .shift-text .text-body {
             height: 120px;
         }
+
+        .social-media-wrapper {
+            text-align: center;
+            width: 100%;
+        }
+        .social-media-wrapper img{
+            max-height: 75px;
+            height: auto;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -187,6 +197,10 @@
     <img src="profile.jpg" alt="Profiel picture Gilles Callebaut" class="img-circle profile">
     <div class="text-body">I'm an Industrial Engineering (Electronics and ICT) student at KU Leuven (campus Ghent).</div>
     <div>Still under construction...</div>
+    <div class="social-media-wrapper">
+    <a href="https://plus.google.com/u/0/+GillesCallebaut" target="_blank"><img src="Google+.png"></a>
+        <a href="https://be.linkedin.com/in/gilles-callebaut-46a751104" target="_blank"><img src="Linked-in.png"></a>
+    </div>
 </div>
 
 
@@ -195,5 +209,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"
         integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7"
         crossorigin="anonymous"></script>
+<script>
+    $(".social-media-wrapper img").hover(function () {
+                $(this).animate({'opacity':'0.7'}, 100);
+            },
+            function (){
+                $(this).animate({'opacity':'1'}, 100);
+            });
+</script>
 </body>
 </html>
