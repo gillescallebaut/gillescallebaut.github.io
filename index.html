@@ -147,13 +147,13 @@
         }
 
         .text-body {
-            height: 250px;
+            height: 300px;
             background-color: rgba(0, 0, 0, 0.85);
             padding: 10px;
             color: #f0f0f0;
             text-shadow: #000 0px 1px 0px;
             font-family: "Consolas", "Courier New", "Courier";
-            font-size: 1.75em;
+            font-size: 1.4em;
             line-height: 1.40em;
             font-weight: 500;
             text-align: left;
@@ -203,9 +203,9 @@
         <div class="head-wrap">
             <div class="text-editor-wrap">
                 <div class="title-bar"><span class="title">Elektronic and ICT Engineer &mdash; bash &mdash; 80x<span
-                        class="terminal-height">25</span></span></div>
+                        class="terminal-height">100</span></span></div>
                 <div class="text-body">
-                    $ <span id="typed"></span>
+                    gilles@callebaut:~$ <span id="typed"></span>
                 </div>
             </div>
         </div>
@@ -221,9 +221,11 @@
 <script src="typed.js"></script>
 <script src="lscache.js"></script>
 <script>
-    function terminal(){
+    $(".header-typed").fadeIn("fast");
+    terminal();
+    function terminal() {
         $("#typed").typed({
-            strings: ["I'm Gilles Callebaut", "I'm an Android enthusiast", "I'm a Software Engineer", "grep -ri \"Gilles Callebaut\""],
+            strings: ["grep -ri \"Gilles\"<br><small>Industrial Engineer<br>    Android enthusiast<br>    Java<br>    Security<br>    Networking</small><br>"],
             typeSpeed: 30,
             callback: function () {
                 shift();
@@ -234,8 +236,8 @@
         $(".head-wrap").addClass("shift-text");
         terminalHeight();
         setTimeout(function () {
-            $(".header-typed").fadeTo('slow').slideUp(1000)
-        }, 1000);
+            $(".header-typed").fadeTo('slow').slideUp(500)
+        }, 0);
         setTimeout(function () {
             $(".navbar").fadeIn("slow")
         }, 2000);
@@ -255,7 +257,7 @@
             else {
                 clearTimeout();
             }
-        }, 100);
+        }, 2000);
     }
 </script>
 <script>
@@ -264,8 +266,8 @@
     var noTerminal = lscache.get(key);
     if (noTerminal) {
         $(".navbar").fadeIn("fast");
-    }else{
-        lscache.set(key, 'true', 60*60);
+    } else {
+        lscache.set(key, 'true', 60 * 60);
         $(".header-typed").fadeIn("fast");
         terminal();
     }
