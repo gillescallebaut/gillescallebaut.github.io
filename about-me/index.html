@@ -7,7 +7,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
 
-
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/reset.css">
@@ -28,14 +27,18 @@
 
         body {
             background-color: #d9d8c6;
+            padding-bottom: 75px;
         }
 
         .profile {
-            max-width: 400px;
-            max-height: 400px;
+            max-width: 260px;
+            max-height: 260px;
             display: block;
-            margin: 0 auto;
+            margin: 20px auto;
+            width: auto;
+            height: auto;
         }
+
 
         html {
             height: 100%;
@@ -180,8 +183,14 @@
             height: auto;
             padding: 10px;
         }
+
         #cd-timeline::before {
             background: #edede5;
+        }
+
+        .title {
+            text-align: center;
+            padding-bottom: 20px;
         }
 
     </style>
@@ -213,21 +222,22 @@
     <!-- Content here -->
     <img src="profile.jpg" alt="Profiel picture Gilles Callebaut" class="img-circle profile">
 
-    <div class="text-body">I'm an Industrial Engineering (Electronics and ICT) student at KU Leuven (campus Ghent).
-    </div>
     <div>Still under construction...</div>
 
 
+    <h1 class="display-4 title">Education</h1>
     <section id="cd-timeline" class="cd-container">
 
         <div class="cd-timeline-block">
             <div class="cd-timeline-img cd-picture">
-                <img src="img/studies.svg" alt="Movie">
+                <img src="img/studies.svg" alt="Education">
             </div>
             <!-- cd-timeline-img -->
 
             <div class="cd-timeline-content">
-                <h2>Master Industrial Engineer <small class="text-muted">Electronics and ICT</small></h2>
+                <h2>Master Industrial Engineer
+                    <small class="text-muted">Electronics and ICT</small>
+                </h2>
                 <p>KU Leuven @campus Ghent</p>
                 <span class="cd-date">2015 - 2016</span>
             </div>
@@ -237,13 +247,16 @@
 
         <div class="cd-timeline-block">
             <div class="cd-timeline-img cd-picture">
-                <img src="img/studies.svg" alt="Movie">
+                <img src="img/studies.svg" alt="Education">
             </div>
             <!-- cd-timeline-img -->
 
             <div class="cd-timeline-content">
-                <h2>Bachelor Industrial Engineer <small class="text-muted">Electronics and ICT</small></h2>
+                <h2>Bachelor Industrial Engineer
+                    <small class="text-muted">Electronics and ICT</small>
+                </h2>
                 <p>Cum Laude</p>
+
                 <p>KU Leuven @campus Ghent</p>
                 <span class="cd-date">2012 - 2015</span>
             </div>
@@ -254,35 +267,73 @@
 
         <div class="cd-timeline-block">
             <div class="cd-timeline-img cd-picture">
-                <img src="img/studies.svg" alt="Picture">
+                <img src="img/studies.svg" alt="Education">
             </div>
             <!-- cd-timeline-img -->
 
             <div class="cd-timeline-content">
-                <h2>High School <small class="text-muted">Middelbare school</small></h2>
-                <p>ASO - Math and Science <small class="text-muted">Wiskunde wetenschappen</small></p>
+                <h2>High School
+                    <small class="text-muted">Middelbare school</small>
+                </h2>
+                <p>ASO - Math and Science
+                    <small class="text-muted">Wiskunde wetenschappen</small>
+                </p>
                 <span class="cd-date">2006-2012</span>
             </div>
             <!-- cd-timeline-content -->
         </div>
         <!-- cd-timeline-block -->
 
+        <!--
 
         <div class="cd-timeline-block">
             <div class="cd-timeline-img cd-location">
                 <img src="img/work.svg" alt="Location">
             </div>
-            <!-- cd-timeline-img -->
 
             <div class="cd-timeline-content">
                 <h2>WORK</h2>
 
                 <p>TODO</p>
             </div>
-            <!-- cd-timeline-content -->
         </div>
-        <!-- cd-timeline-block -->
-
+        -->
+    </section>
+<!--
+    <h1 class="display-4 title">Skills</h1>
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-md-offset-2">
+            <div class="row v-center">
+                <div class="col-sm-12 col-md-4"><h5>Java</h5></div>
+                <div class="col-sm-12 col-md-8"><progress class="progress progress-animated" value="90" max="100">90%</progress></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-md-offset-2">
+            <div class="row v-center">
+                <div class="col-sm-12 col-md-4"><h5>C/C++</h5></div>
+                <div class="col-sm-12 col-md-8"><progress class="progress progress-animated" value="65" max="100">65%</progress></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-md-offset-2">
+            <div class="row v-center">
+                <div class="col-sm-12 col-md-4"><h5>HTML5/CSS3/JS</h5></div>
+                <div class="col-sm-12 col-md-8"><progress class="progress progress-animated" value="65" max="100">65%</progress></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-md-offset-2">
+            <div class="row v-center">
+                <div class="col-sm-12 col-md-4"><h5>Android</h5></div>
+                <div class="col-sm-12 col-md-8"><progress class="progress progress-animated" value="80" max="100">80%</progress></div>
+            </div>
+        </div>
+    </div>
+-->
 
     <div class="social-media-wrapper">
         <a href="https://plus.google.com/u/0/+GillesCallebaut" target="_blank"><img src="Google+.png"></a>
@@ -291,7 +342,7 @@
 </div>
 
 
-<!-- jQuery first, then Bootstrap JS. -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"
         integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7"
