@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
+
+
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- CSS reset -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Resource style -->
+    <script src="js/modernizr.js"></script>
+    <!-- Modernizr -->
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
           integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -19,12 +30,13 @@
             background-color: #d9d8c6;
         }
 
-        .profile{
+        .profile {
             max-width: 400px;
             max-height: 400px;
             display: block;
-            margin:0 auto;
+            margin: 0 auto;
         }
+
         html {
             height: 100%;
             background-color: #d9d8c6;
@@ -162,11 +174,16 @@
             text-align: center;
             width: 100%;
         }
-        .social-media-wrapper img{
+
+        .social-media-wrapper img {
             max-height: 75px;
             height: auto;
             padding: 10px;
         }
+        #cd-timeline::before {
+            background: #edede5;
+        }
+
     </style>
 </head>
 <body>
@@ -195,10 +212,80 @@
 <div class="container">
     <!-- Content here -->
     <img src="profile.jpg" alt="Profiel picture Gilles Callebaut" class="img-circle profile">
-    <div class="text-body">I'm an Industrial Engineering (Electronics and ICT) student at KU Leuven (campus Ghent).</div>
+
+    <div class="text-body">I'm an Industrial Engineering (Electronics and ICT) student at KU Leuven (campus Ghent).
+    </div>
     <div>Still under construction...</div>
+
+
+    <section id="cd-timeline" class="cd-container">
+
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-picture">
+                <img src="img/studies.svg" alt="Movie">
+            </div>
+            <!-- cd-timeline-img -->
+
+            <div class="cd-timeline-content">
+                <h2>Master Industrial Engineer <small class="text-muted">Electronics and ICT</small></h2>
+                <p>KU Leuven @campus Ghent</p>
+                <span class="cd-date">2015 - 2016</span>
+            </div>
+            <!-- cd-timeline-content -->
+        </div>
+        <!-- cd-timeline-block -->
+
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-picture">
+                <img src="img/studies.svg" alt="Movie">
+            </div>
+            <!-- cd-timeline-img -->
+
+            <div class="cd-timeline-content">
+                <h2>Bachelor Industrial Engineer <small class="text-muted">Electronics and ICT</small></h2>
+                <p>Cum Laude</p>
+                <p>KU Leuven @campus Ghent</p>
+                <span class="cd-date">2012 - 2015</span>
+            </div>
+            <!-- cd-timeline-content -->
+        </div>
+        <!-- cd-timeline-block -->
+
+
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-picture">
+                <img src="img/studies.svg" alt="Picture">
+            </div>
+            <!-- cd-timeline-img -->
+
+            <div class="cd-timeline-content">
+                <h2>High School <small class="text-muted">Middelbare school</small></h2>
+                <p>ASO - Math and Science <small class="text-muted">Wiskunde wetenschappen</small></p>
+                <span class="cd-date">2006-2012</span>
+            </div>
+            <!-- cd-timeline-content -->
+        </div>
+        <!-- cd-timeline-block -->
+
+
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-location">
+                <img src="img/work.svg" alt="Location">
+            </div>
+            <!-- cd-timeline-img -->
+
+            <div class="cd-timeline-content">
+                <h2>WORK</h2>
+
+                <p>TODO</p>
+            </div>
+            <!-- cd-timeline-content -->
+        </div>
+        <!-- cd-timeline-block -->
+
+
     <div class="social-media-wrapper">
-    <a href="https://plus.google.com/u/0/+GillesCallebaut" target="_blank"><img src="Google+.png"></a>
+        <a href="https://plus.google.com/u/0/+GillesCallebaut" target="_blank"><img src="Google+.png"></a>
         <a href="https://be.linkedin.com/in/gilles-callebaut-46a751104" target="_blank"><img src="Linked-in.png"></a>
     </div>
 </div>
@@ -209,12 +296,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"
         integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7"
         crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<!-- Resource jQuery -->
 <script>
     $(".social-media-wrapper img").hover(function () {
-                $(this).animate({'opacity':'0.7'}, 100);
+                $(this).animate({'opacity': '0.7'}, 100);
             },
-            function (){
-                $(this).animate({'opacity':'1'}, 100);
+            function () {
+                $(this).animate({'opacity': '1'}, 100);
             });
 </script>
 </body>
