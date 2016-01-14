@@ -172,6 +172,7 @@
         .shift-text .text-body {
             height: 120px;
         }
+
     </style>
 </head>
 <body>
@@ -186,7 +187,7 @@
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/about-me">About Me</a>
+                <a class="nav-link about-me" href="/about-me">About Me</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/projects">Projects</a>
@@ -210,6 +211,10 @@
             </div>
         </div>
     </div>
+
+        <span id="aboutme"></span>
+
+
 </div>
 
 
@@ -223,6 +228,12 @@
 <script>
     $(".header-typed").fadeIn("fast");
     terminal();
+
+    function blink() {
+            $('.about-me').animate({opacity: 0}, 500, "linear", function () {
+                $(this).animate({opacity: 1}, 500);
+            });
+    }
     function terminal() {
         $("#typed").typed({
             strings: ["grep -ri \"Gilles\"<br><small>Industrial Engineer<br>    Android enthusiast<br>    Java<br>    Security<br>    Networking</small><br>"],
@@ -232,6 +243,16 @@
             }
         });
     }
+    function aboutMe() {
+        $("#aboutme").typed({
+            strings: ["Want to know more about me?<br>Hell yeah!<br> Visit my about me section."],
+            typeSpeed: 30,
+            callback: function () {
+                blink();
+            }
+        });
+    }
+
     function shift() {
         $(".head-wrap").addClass("shift-text");
         terminalHeight();
@@ -239,7 +260,8 @@
             $(".header-typed").fadeTo('slow').slideUp(500)
         }, 0);
         setTimeout(function () {
-            $(".navbar").fadeIn("slow")
+            $(".navbar").fadeIn("slow");
+            aboutMe();
         }, 2000);
     }
 
@@ -259,8 +281,7 @@
             }
         }, 2000);
     }
-</script>
-<script>
+
     var key = 'noTerminal';
     lscache.flushExpired();
     var noTerminal = lscache.get(key);
